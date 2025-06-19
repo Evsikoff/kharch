@@ -1,0 +1,21 @@
+# Ren'Py auto-generated files
+*.rpyc
+*.rpymc
+*.pyo
+*.pyc
+
+# Ren'Py caches and back-ups
+/cache
+/saves
+_ren.py
+traceback.txt
+errors.txt
+log.txt
+
+# Ren'Py archives
+*.rpa
+
+# User-specific files (like editor settings)
+.vscode/
+.idea/
+.atom/
