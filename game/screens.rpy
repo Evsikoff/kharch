@@ -4,7 +4,247 @@
 
 init offset = -1
 
+# ==================================================================================
+# НАСТРОЙКИ И ТЕКСТЫ
+# ==================================================================================
 
+# Имя файла шрифта в папке game. ОБЯЗАТЕЛЬНО СКАЧАЙТЕ ЕГО!
+define ch_font = "gui/font/myfont.ttf"
+define ru_font = "gui/font/rus.ttf"
+
+screen language_selection():
+    tag menu
+    modal True
+
+    add "#000"
+
+    frame:
+        background None
+        align (0.5, 0.5)
+
+        vbox:
+            align (0.5, 0.5)
+            spacing 40
+
+            # Заголовок
+            text "ВЫБЕРИТЕ ЯЗЫК" color "#00c8ff" size 40 xalign 0.5 font ru_font
+
+            # --- КНОПКА 1 (РУССКИЙ) ---
+            button:
+                action [Language(None), SetField(persistent, "lang_chosen", True), Return()]
+                xalign 0.5
+                xsize 400
+                ysize 80
+                background "#333333"
+                hover_background "#555555"
+
+                text "РУССКИЙ":
+                    align (0.5, 0.5)
+                    size 30
+                    color "#ffffff"
+                    font ru_font
+
+            # --- КНОПКА 2 (КИТАЙСКИЙ) ---
+            button:
+                action [Language("chinese"), SetField(persistent, "lang_chosen", True), Return()]
+                xalign 0.5
+                xsize 400
+                ysize 80
+                background "#333333"
+                hover_background "#555555"
+
+                text "中文 (Chinese)":
+                    align (0.5, 0.5)
+                    size 30
+                    color "#ffffff"
+                    font ch_font
+
+# Английский текст
+define eula_en = """{b}PRIVACY POLICY AND USER AGREEMENT{/b}
+
+1. INTRODUCTION
+Thank you for playing our game ("App"). By downloading, installing, or playing the App, you agree to the terms of this Privacy Policy and User Agreement. If you do not agree, please uninstall the App immediately.
+
+2. DATA COLLECTION
+We respect your privacy. We DO NOT collect, store, share, or sell any of your personal data, sensitive information, or unique device identifiers. The App operates completely offline regarding user data.
+
+3. ANDROID PERMISSIONS
+To function correctly, the App requires access to the following permissions on your device:
+
+- READ_EXTERNAL_STORAGE
+- WRITE_EXTERNAL_STORAGE
+
+Reason for usage: These permissions are strictly used to save and load your game progress (save files) and to read game assets required for the App to run. We do not access, read, or modify your personal photos, media, or other files unrelated to the game.
+
+4. THIRD-PARTY SERVICES
+Since we do not collect data, we do not share data with third parties. However, the App runs on the Ren'Py engine.
+
+5. CONTACT
+If you have any questions regarding this policy, please contact us at: gsmevsikov@gmail.com"""
+
+# Китайский текст
+define eula_zh = """{b}隐私政策与用户协议{/b}
+
+1. 引言
+感谢您游玩本游戏（以下简称“应用”）。下载、安装或使用本应用即表示您同意本《隐私政策》和《用户协议》。如果您不同意，请立即卸载本应用。
+
+2. 数据收集
+我们非常重视您的隐私。本应用不收集、不存储、不共享也不出售您的任何个人信息、敏感数据或唯一设备标识符。关于用户数据，本应用完全在本地运行。
+
+3. 系统权限
+为了保证游戏的正常运行，本应用需要请求以下设备权限：
+
+- 读取外部存储 (READ_EXTERNAL_STORAGE)
+- 写入外部存储 (WRITE_EXTERNAL_STORAGE)
+
+使用目的：这些权限仅用于保存和读取您的游戏进度（存档文件）以及加载游戏运行所需的资源文件。我们绝对不会访问、读取 or 修改您的个人照片、媒体文件或任何与游戏无关的文件。
+
+4. 第三方服务
+由于我们不收集数据，因此不会与第三方共享数据。本应用基于 Ren'Py 引擎开发。
+
+5. 联系方式
+如果您对本政策有任何疑问，请联系我们：gsmevsikov@gmail.com"""
+
+
+
+screen health_warning_screen():
+    # Черный фон
+    add "#000"
+
+    # Центральный блок текста
+    vbox:
+        align (0.5, 0.4) # По центру по горизонтали, чуть выше центра по вертикали (0.5, 0.5 - это ровно центр)
+        spacing 30 # Расстояние между заголовком и текстом
+
+        # Заголовок: Здоровые советы
+        text "{font=[ch_font]}健康游戏忠告{/font}":
+            xalign 0.5
+            size 45
+            bold True
+            color "#fff"
+
+        # Основной текст (4 строки)
+        # \n означает перенос строки
+        text "{font=[ch_font]}抵制不良游戏，拒绝盗版游戏。\n注意自我保护，谨防受骗上当。\n适度游戏益脑，沉迷游戏伤身。\n合理安排时间，享受健康生活。{/font}":
+            xalign 0.5
+            text_align 0.5 # Выравнивание текста по центру внутри блока
+            size 28
+            color "#fff"
+            line_spacing 15 # Расстояние между строками
+
+    # Нижний текст (Copyright)
+    text "{font=[ch_font]}著作权人：海南志浩网络科技有限公司{/font}":
+        align (0.5, 0.95) # По центру низа (0.95 - почти самый низ)
+        size 20
+        color "#aaaaaa" # Сделаем чуть сероватым, чтобы не отвлекал
+# Переменная текущего языка (по умолчанию английский)
+default current_eula_lang = "en"
+
+
+# ==================================================================================
+# ЭКРАН СОГЛАШЕНИЯ
+# ==================================================================================
+
+screen eula_screen():
+    modal True
+    add "#000a" # Затемнение фона
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+
+        # Размеры окна (подстроены под мобильные экраны)
+        xsize 900
+        ysize 1100
+
+        # Внутренние отступы, чтобы текст не прилипал к краям
+        padding (40, 40)
+
+        vbox:
+            spacing 20 # Расстояние между элементами по вертикали
+
+            # --- 1. ЗАГОЛОВОК ---
+            if current_eula_lang == "en":
+                text "{b}PRIVACY POLICY{/b}" xalign 0.5 size 30 color "#fff"
+            else:
+                # Используем тег font для китайского шрифта
+                text "{font=[ch_font]}{b}隐私政策{/b}{/font}" xalign 0.5 size 30 color "#fff"
+
+            # --- 2. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ---
+            hbox:
+                xalign 0.5
+                spacing 40
+
+                textbutton "English":
+                    action SetVariable("current_eula_lang", "en")
+                    text_color ("#ffffff" if current_eula_lang == "en" else "#888888")
+
+                textbutton "{font=[ch_font]}中文 (Chinese){/font}":
+                    action SetVariable("current_eula_lang", "zh")
+                    text_color ("#ffffff" if current_eula_lang == "zh" else "#888888")
+
+            # --- 3. ОБЛАСТЬ ТЕКСТА (С ПРОКРУТКОЙ) ---
+            viewport:
+                id "eula_vp"
+                scrollbars "vertical"
+                mousewheel True
+                draggable True
+
+                # Ограничиваем высоту текста, чтобы осталось место для кнопок внизу
+                ysize 650
+
+                vbox:
+                    if current_eula_lang == "en":
+                        text eula_en size 22 color "#ffffff"
+                    else:
+                        # Применяем шрифт ко всему блоку китайского текста
+                        text eula_zh size 22 color "#ffffff" font ch_font
+
+            # --- 4. КНОПКИ ДЕЙСТВИЯ (НИЗ) ---
+            hbox:
+                xalign 0.5
+                spacing 60
+                yalign 1.0 # Прижать к низу контейнера
+
+                # Кнопка ПРИНЯТЬ
+                textbutton ("Accept" if current_eula_lang == "en" else "{font=[ch_font]}接受{/font} (Accept)"):
+                    # Сохраняем согласие и закрываем экран
+                    action [SetField(persistent, "eula_accepted", True), Return()]
+                    style "button"
+
+                # Кнопка ВЫЙТИ
+                textbutton ("Exit" if current_eula_lang == "en" else "{font=[ch_font]}退出{/font} (Exit)"):
+                    action Quit(confirm=False)
+
+# ==================================================================================
+# ЛОГИКА ЗАПУСКА
+# ==================================================================================
+
+label splashscreen:
+    # ----------------------------------------------------
+    # 1. ВЫБОР ЯЗЫКА (Каждый раз в developer mode или если не выбран)
+    # ----------------------------------------------------
+    if not persistent.lang_chosen or config.developer:
+        call screen language_selection
+
+    # ----------------------------------------------------
+    # 2. ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ (Каждый раз в developer mode или если не принята)
+    # ----------------------------------------------------
+    if not persistent.eula_accepted or config.developer:
+        call screen eula_screen
+
+    # ----------------------------------------------------
+    # 3. ПРЕДУПРЕЖДЕНИЕ О ЗАВИСИМОСТИ (Каждый запуск)
+    # ----------------------------------------------------
+    # Показываем экран с растворением (dissolve)
+    show screen health_warning_screen
+    with dissolve
+    # Ждем 3.5 секунды (игрок может кликнуть, чтобы пропустить)
+    pause 3.5
+    # Скрываем экран
+    hide screen health_warning_screen
+    with dissolve
+    return
 ################################################################################
 ## Стили
 ################################################################################

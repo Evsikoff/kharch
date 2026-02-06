@@ -133,7 +133,7 @@ define gui.namebox_tile = False
 ## Размещение диалога по отношению к текстовому окну. Это могут быть целые
 ## значения в пикселях слева и сверху от текстового окна или процентное
 ## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 200 #402
 define gui.dialogue_ypos = 75
 
 ## Максимальная ширина текста диалога в пикселях.
@@ -350,7 +350,7 @@ define config.history_length = 250
 define gui.history_height = 210
 
 ## Дополнительное пространство добавляемое между записями экрана истории.
-define gui.history_spacing = 0
+define gui.history_spacing = 50
 
 ## Местоположение, ширина и выравнивание заголовка, показывающего имя говорящего
 ## персонажа.
@@ -362,7 +362,7 @@ define gui.history_name_xalign = 1.0
 ## Местоположение, ширина и выравнивание диалогового текста.
 define gui.history_text_xpos = 255
 define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+define gui.history_text_width = 600 #1110
 define gui.history_text_xalign = 0.0
 
 
@@ -447,9 +447,9 @@ init python:
 
         ## Регулирует местоположение текстового окна.
         gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.name_xpos = 20 #120
+        gui.dialogue_xpos = 10 #135
+        gui.dialogue_width = 1500 #1650
 
         ## Изменяет размеры и интервалы различных объектов.
         gui.slider_size = 54
@@ -461,7 +461,7 @@ init python:
         gui.pref_button_spacing = 15
 
         gui.history_height = 285
-        gui.history_text_width = 1035
+        gui.history_text_width = 500 #1035
 
         gui.quick_button_text_size = 30
 

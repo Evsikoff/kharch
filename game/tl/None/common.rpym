@@ -1513,3 +1513,46 @@ translate None strings:
     old "unescape: Disables escaping of unicode symbols in unicode strings and print it as is (default)."
     new "unescape: Выключает экранирование Unicode символов в строках unicode и выводит их как есть (по умолчанию)."
 
+
+translate None strings:
+
+    # renpy/common/000statements.rpy:28
+    old "Click to play the video."
+    new "Click to play the video."
+
+    # renpy/common/00accessibility.rpy:180
+    old "Mono Audio"
+    new "Mono Audio"
+
+    # renpy/common/00accessibility.rpy:246
+    old "Kerning"
+    new "Kerning"
+
+    # renpy/common/00accessibility.rpy:288
+    old "Self-Voicing and Audio"
+    new "Self-Voicing and Audio"
+
+    # renpy/common/00accessibility.rpy:292
+    old "Text"
+    new "Text"
+
+    # renpy/common/00preferences.rpy:602
+    old "mono audio"
+    new "mono audio"
+
+    # renpy/common/00preferences.rpy:611
+    old "font kerning"
+    new "font kerning"
+
+    # renpy/common/00updater.rpy:1935
+    old "An error has occurred:"
+    new "Возникла ошибка:"
+
+    # renpy/common/00updater.rpy:1992
+    old "An error occurred when trying to download game data:"
+    new "При попытке загрузить данные игры произошла ошибка:"
+
+    # renpy/common/_developer/developer.rpym:144
+    old "    (transforms: [', '.join(transform_list)])"
+    new "    (transforms: [', '.join(transform_list)])"
+

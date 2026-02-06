@@ -61,51 +61,52 @@ default giantsTooth = 0 # Зубы великанов
 default snakeShapedRing = 0 # Серебряное кольцо в форме змеи, обвивающейся вокруг пальца владельца. Параграф 130
 default flint = 0 # огниво
 default antidoteSnakeVenom = 0 #Антидот от змеиного яда
+default label_counter = 0
 
 # label choice_17  label choice_149
 
 # Определение персонажей игры.
-define e = Character("Рассказчик",color="#c8ffc8")
-define g = Character("Страж городских ворот",color="#FA8072")
-define i = Character("Игрок",color="#9ACD32")
-define s = Character("Система",color="#7B68EE")
-define o = Character("Старец",color="#0000FF")
-define be = Character("Черный эльф",color="#F4A460")
-define f = Character("Ход боя",color="#483D8B")
-define p = Character("Свинн-мастер",color="#9ACD32")
-define h = Character("Обитатель дома",color="#FF6347")
-define ork = Character("Орклинги",color="#5F9EA0")
-define bm = Character("Заросший щетиной мужчина",color="#008080")
-define rm = Character("Кто-то из тольпы",color="#20B2AA")
-define pr = Character("Зазывала при ринге",color="#FFFFE0")
-define ym = Character("Юноша-странник",color="#1E90FF")
-define bem = Character("Неопрятный бородач",color="#FF00FF")
-define bck = Character("Букмекер",color="#FF00FF")
-define lo = Character("Один из малышей орклингов",color="#7B68EE")
-define tw = Character("Горожанка",color="#FF00FF")
-define se = Character("Торговец",color="#191970")
-define sp = Character("Спрайт",color="#CD853F")
-define pi = Character("Пикси",color="#BC8F8F")
-define m = Character("Ученый и исследователь",color="#A52A2A")
-define inn = Character("Трактирщик",color="#FF00FF")
-define wwc = Character("Прихожанка",color="#808000")
-define bs = Character("Жрец",color="#00FFFF")
-define sa = Character("Матрос",color="#008080")
-define pa = Character("Художник",color="#778899")
-define fc = Character("Заклинатель огня",color="#4169E1")
-define el = Character("Эльвин",color="#2F4F4F")
-define cy = Character("Странное существо с закрытыми глазами",color="#FAEBD7")
-define osk = Character("Старик из гроба",color="#BC8F8F")
-define lbg = Character("Маленький бородатый гном",color="#8A2BE2")
-define pm = Character("Нищий",color="#DA70D6")
-define ta = Character("Надпись на табличке",color="#BA55D3")
-define sg = Character("Городской стражник",color="#0000FF")
-define idd = Character("Идол",color="#A0522D")
-define ga = Character("Ворота",color="#808080")
-define spoot = Character("Старший Дозорный в Форпостном Городке",color="#FFA07A")
-define ww = Character("Женский голос из колодца",color="#FA8072")
-define iw = Character("Незнакомец за спиной",color="#00FF7F")
-define sggh = Character("Охранник игорных залов",color="#20B2AA")
+define e = Character(color="#c8ffc8")
+define g = Character(_("Страж городских ворот"), color="#FA8072")
+define i = Character(_("Игрок"), color="#9ACD32")
+define s = Character(_("Система"), color="#7B68EE")
+define o = Character(_("Старец"), color="#0000FF")
+define be = Character(_("Черный эльф"), color="#F4A460")
+define f = Character(_("Ход боя"), color="#483D8B")
+define p = Character(_("Свинн-мастер"), color="#9ACD32")
+define h = Character(_("Обитатель дома"), color="#FF6347")
+define ork = Character(_("Орклинги"), color="#5F9EA0")
+define bm = Character(_("Заросший щетиной мужчина"), color="#008080")
+define rm = Character(_("Кто-то из тольпы"), color="#20B2AA")
+define pr = Character(_("Зазывала при ринге"), color="#FFFFE0")
+define ym = Character(_("Юноша-странник"), color="#1E90FF")
+define bem = Character(_("Неопрятный бородач"), color="#FF00FF")
+define bck = Character(_("Букмекер"), color="#FF00FF")
+define lo = Character(_("Один из малышей орклингов"), color="#7B68EE")
+define tw = Character(_("Горожанка"), color="#FF00FF")
+define se = Character(_("Торговец"), color="#191970")
+define sp = Character(_("Спрайт"), color="#CD853F")
+define pi = Character(_("Пикси"), color="#BC8F8F")
+define m = Character(_("Ученый и исследователь"), color="#A52A2A")
+define inn = Character(_("Трактирщик"), color="#FF00FF")
+define wwc = Character(_("Прихожанка"), color="#808000")
+define bs = Character(_("Жрец"), color="#00FFFF")
+define sa = Character(_("Матрос"), color="#008080")
+define pa = Character(_("Художник"), color="#778899")
+define fc = Character(_("Заклинатель огня"), color="#4169E1")
+define el = Character(_("Эльвин"), color="#2F4F4F")
+define cy = Character(_("Странное существо с закрытыми глазами"), color="#FAEBD7")
+define osk = Character(_("Старик из гроба"), color="#BC8F8F")
+define lbg = Character(_("Маленький бородатый гном"), color="#8A2BE2")
+define pm = Character(_("Нищий"), color="#DA70D6")
+define ta = Character(_("Надпись на табличке"), color="#BA55D3")
+define sg = Character(_("Городской стражник"), color="#0000FF")
+define idd = Character(_("Идол"), color="#A0522D")
+define ga = Character(_("Ворота"), color="#808080")
+define spoot = Character(_("Старший Дозорный в Форпостном Городке"), color="#FFA07A")
+define ww = Character(_("Женский голос из колодца"), color="#FA8072")
+define iw = Character(_("Незнакомец за спиной"), color="#00FF7F")
+define sggh = Character(_("Охранник игорных залов"), color="#20B2AA")
 
 
 # Вместо использования оператора image можете просто
@@ -151,6 +152,22 @@ image SnakeShapedRing = "ssr.png"
 image SeniorPatrolOfficerOutpostTown = "spoot.png"
 image SecurityGuardOfGamblingHalls = "sggh.png"
 
+
+# данный код можно прописать в любом файле вашего проекта(например, в script.rpy)
+
+
+
+
+
+python early:
+    # Функция для показа полноэкранной рекламы
+    def show_fullscreen_ad():
+        renpy.emscripten.run_script("showFullscreenAd();")
+
+    # Функция для показа видео с наградой (оставим ее)
+    def show_rewarded_video():
+        renpy.emscripten.run_script("showRewardedAd('reward_received');")
+
 # Игра начинается здесь:
 
 screen game_over():
@@ -159,10 +176,22 @@ screen game_over():
         xalign 0.5 yalign 0.5
         padding (20, 20)
         vbox:
-            text "Конец игры" size 40 color "#ff0000" xalign 0.5
-            text "Ваше здоровье исчерпано!" size 24 xalign 0.5
-            textbutton "Выйти" xalign 0.5 action Quit(confirm=False)
-            textbutton "Начать заново" xalign 0.5 action Start()
+            text "Конец игры / 游戏结束" size 40 color "#ff0000" xalign 0.5
+            text "Ваше здоровье исчерпано! / 您的健康已耗尽！" size 24 xalign 0.5
+            textbutton "Выйти / 退出" xalign 0.5 action Quit(confirm=False)
+            textbutton "Начать заново / 重新开始" xalign 0.5 action Start()
+
+screen victory():
+    modal True
+    frame:
+        xalign 0.5 yalign 0.5
+        padding (20, 20)
+        vbox:
+            text "Победа! / 胜利！" size 40 color "#00ff00" xalign 0.5
+            text "Вы преодолели Кхар и вошли в Бакланд! / 您已经克服了Khar并进入了Bakland！" size 24 xalign 0.5
+            text "На этом наша история подходит к концу. / 我们的故事到此结束。" size 20 xalign 0.5
+            text "Спасибо, что играли! / 感谢您的游玩！" size 20 xalign 0.5
+            textbutton "Играть снова / 再玩一次" xalign 0.5 action Start()
 
 screen rune_choice():
     modal True  # Блокирует взаимодействие с фоном
@@ -190,16 +219,18 @@ style small_say_window:
     ysize 200      # Высота окна
     padding (20, 20)  # Уменьшенные отступы внутри окна
 
+
 label start:
+
 
     play music "audio/main_theme.mp3" loop
     scene 1-1
 
-    e "Кхар – место, где правит хаос. Этот город - ворота в Бакланд."
+    narrator "Кхар – место, где правит хаос. Этот город - ворота в Бакланд."
 
     #e "Вы смотрите вниз"
 
-    e "Кхар расположен у подножия Холмов Шамутанти, на берегу стремительно текущей великой реки Джабаджи"
+    narrator "Кхар расположен у подножия Холмов Шамутанти, на берегу стремительно текущей великой реки Джабаджи"
 
     e "Вы останавливаетесь на середине спуска, чтобы осмотреться"
 
@@ -322,6 +353,14 @@ label choice_59:
 
         g "Пожалуйста, немножко подожди."
 
+        #s "Перед началом следующей главы будет короткая рекламная пауза."
+        #$ renpy.pause(2.0) # Даем игроку время прочитать сообщение
+        #$ show_fullscreen_ad()
+        # Вызываем нашу специальную метку для показа рекламы
+        #call show_interstitial_ad
+
+        #s "Спасибо за терпение! Начинаем вторую главу."
+
         jump choice_225
 
 label choice_36:
@@ -370,7 +409,7 @@ label choice_126:
     scene 225-1
     e "Вы поспешно рассказываете другим стражникам о 2 золотых, которые их товарищ забрал у вас. Они с подозрением смотрят на часового у ворот, но он сердито отрицает ваши обвинения и бьет вас в живот."
     $ health -= 2
-    s "Количество вашего здоровья монет уменьшилось на два и теперь равно {color=#FF00FF}[health]{/color}"
+    s "Количество вашего здоровья уменьшилось на два и теперь равно {color=#FF00FF}[health]{/color}"
     if health > 0:
         jump choice_291
     else:
@@ -1926,7 +1965,7 @@ label choice_190:
     e "Каждая монета, которую вы поставите на варвара, принесет вам выигрыш в 3 золотых, а если поставите на огра, то каждые 3 монеты дадут выигрыш в 1 золотой."
     e "Это если вы угадаете победителя, если не угадаете, то теряете свою ставку."
     s "Количество вашего золота - {color=#FF00FF}[gold]{/color}"
-    $ user_input = renpy.input("Введите сумму ставки:")
+    $ user_input = renpy.input("Введите сумму ставки:\n输入下注金额：")
     $ user_input = user_input.strip()  # Удаляем пробелы
     if user_input.isdigit() or (user_input.startswith("-") and user_input[1:].isdigit()):
         $ bidAmount = int(user_input)
@@ -3763,7 +3802,7 @@ label choice_301:
     bs "Старик чувствует приближение смерти и решает разделить свое богатство между сыновьями."
     bs "Он дает 5 золотых своему второму из самых младших сыновей, 13 своему старшему и 9 четвертому из самых младших."
     bs "Сколько всего у него было золотых монет?"
-    $ ans = renpy.input("Введите правильный ответ!")
+    $ ans = renpy.input("Введите правильный ответ!\n请输入正确答案！")
     $ ans = ans.strip()
     if (ans.isdigit() or (ans.startswith("-") and ans[1:].isdigit())) and ans == "48":
         e "Ответ верный!"
@@ -5047,193 +5086,205 @@ label choice_324:
 
 label choice_264:
     scene 324-1
-    lbg "Славно, славно!"
-    lbg "Давайте посмотрим, какую сделку мы с вами можем заключить сегодня"
+    lbg "Славно, славно!\n好极了，好极了！"
+    lbg "Давайте посмотрим, какую сделку мы с вами можем заключить сегодня\n让我们看看今天能做什么交易。"
 
     python:
-        # --- ШАГ 0: ПОДГОТОВКА ДАННЫХ ---
-        # Создаем словарь, чтобы связать названия предметов с переменными в игре.
-        inventory_map = {
-            "Черная маска": "blackmask", "Зелье здоровья": "healingPotion",
-            "Мешочек с камнями": "bagWithThreeStones", "Морской песок": "servingOfSeaSand",
-            "Костяной браслет": "braceletBones", "Тусклая цепь": "dimChain",
-            "Зеркало в золотой рамке": "goldFramedMirror", "Свиток пергамента": "scrollParchment",
-            "Таинственное зелье": "bottleWithTheInscription", "Пчелиный воск": "honeycombWithBeeswax",
-            "Флакон с пылью": "bottleDust", "Козий сыр": "goatCheese",
-            "Пустой кошелек": "emptyWallet", "Талисман удачи": "goodLuckCharm",
-            "Яд": "poison", "Духи": "spirits", "Парик": "wig",
-            "Бамбуковая флейта": "bambooFlute", "Сумка с зубами гоблинов": "goblinTeethBag",
-            "Большой рюкзак": "largeBackpack"
+        # --- БАРТЕР: двухъязычные названия предметов (RU + 中文) ---
+        store.ru_names = {
+            "blackmask": "Черная маска",
+            "healingPotion": "Зелье здоровья",
+            "bagWithThreeStones": "Мешочек с камнями",
+            "servingOfSeaSand": "Морской песок",
+            "braceletBones": "Костяной браслет",
+            "dimChain": "Тусклая цепь",
+            "goldFramedMirror": "Зеркало в золотой рамке",
+            "scrollParchment": "Свиток пергамента",
+            "bottleWithTheInscription": "Таинственное зелье",
+            "honeycombWithBeeswax": "Пчелиный воск",
+            "bottleDust": "Флакон с пылью",
+            "goatCheese": "Козий сыр",
+            "emptyWallet": "Пустой кошелек",
+            "goodLuckCharm": "Талисман удачи",
+            "poison": "Яд",
+            "spirits": "Духи",
+            "wig": "Парик",
+            "bambooFlute": "Бамбуковая флейта",
+            "goblinTeethBag": "Сумка с зубами гоблинов",
+            "largeBackpack": "Большой рюкзак",
+            "compass": "Зачарованный компас",
         }
 
-        # Собираем список названий предметов, которые есть у игрока.
-        player_inventory_names = [name for name, var in inventory_map.items() if getattr(store, var, 0) > 0]
+        store.zh_names = {
+            "blackmask": "黑色面具",
+            "healingPotion": "治疗药水",
+            "bagWithThreeStones": "石子袋",
+            "servingOfSeaSand": "海沙",
+            "braceletBones": "骨制手镯",
+            "dimChain": "暗淡的链条",
+            "goldFramedMirror": "金框镜子",
+            "scrollParchment": "羊皮卷轴",
+            "bottleWithTheInscription": "神秘药剂",
+            "honeycombWithBeeswax": "蜂蜡",
+            "bottleDust": "尘土小瓶",
+            "goatCheese": "山羊奶酪",
+            "emptyWallet": "空钱包",
+            "goodLuckCharm": "幸运护符",
+            "poison": "毒药",
+            "spirits": "香水",
+            "wig": "假发",
+            "bambooFlute": "竹笛",
+            "goblinTeethBag": "哥布林牙袋",
+            "largeBackpack": "大背包",
+            "compass": "附魔罗盘",
+        }
+
+        def item_bi(var_name):
+            ru = store.ru_names.get(var_name, var_name)
+            zh = store.zh_names.get(var_name, "")
+            return (ru + " / " + zh) if zh else ru
+
+        # делаем доступной в скрипте/экранах по имени item_bi(...)
+        store.item_bi = item_bi
+
+        # Собираем список предметов, которые есть у игрока.
+        player_inventory_vars = [var for var in store.ru_names.keys() if getattr(store, var, 0) > 0]
 
         # Проверяем, есть ли у игрока хотя бы 4 предмета для обмена.
-        if len(player_inventory_names) < 4:
-            renpy.say(lbg, "Хм, я вижу, у тебя маловато вещей для серьезного обмена. Приходи, когда разбогатеешь!")
-            renpy.jump("choice_158") # Отправляем игрока дальше, если у него нет 4 предметов.
+        if len(player_inventory_vars) < 4:
+            renpy.say(lbg, "Хм, я вижу, у тебя маловато вещей для серьезного обмена. Приходи, когда разбогатеешь!\n嗯，我看你手头的东西不够做笔像样的交换。等你更富了再来！")
+            renpy.jump("choice_158")
 
         # --- ШАГ 1: ВЫБОР 4 ПРЕДМЕТОВ ИГРОКОМ ---
-        renpy.say(lbg, "Выбери четыре вещицы, которые хочешь предложить на обмен. Только четыре, не больше и не меньше!")
+        renpy.say(lbg, "Выбери четыре вещицы, которые хочешь предложить на обмен. Только четыре, не больше и не меньше!\n选择四样你想拿来交换的小玩意儿。只准四样，不多也不少！")
 
-        # Объявляем переменные в области видимости Ren'Py
-        store.selected_for_trade_names = []
-        available_to_select = list(player_inventory_names)
+        store.selected_for_trade_vars = []
+        available_to_select = list(player_inventory_vars)
 
-        # Цикл для выбора 4 предметов
         for i in range(4):
-            menu_choices = [(name, name) for name in available_to_select]
-            menu_choices.append(("- Отказаться от обмена", "cancel_trade"))
+            menu_choices = [(item_bi(var), var) for var in available_to_select]
+            menu_choices.append(("- Отказаться от обмена / 取消交换", "cancel_trade"))
 
-            renpy.say(lbg, f"Выбери предмет {i + 1} из 4:")
-            chosen_item = renpy.display_menu(menu_choices)
+            renpy.say(lbg, f"Выбери предмет {i + 1} из 4:\n选择第 {i + 1} 件（共4件）：")
+            chosen_var = renpy.display_menu(menu_choices)
 
-            if chosen_item == "cancel_trade":
+            if chosen_var == "cancel_trade":
                 renpy.jump("choice_158")
 
-            store.selected_for_trade_names.append(chosen_item)
-            available_to_select.remove(chosen_item)
+            store.selected_for_trade_vars.append(chosen_var)
+            available_to_select.remove(chosen_var)
 
-    lbg "Хммм... Интересное предложение. А что ты хочешь взамен?"
+    lbg "Хммм... Интересное предложение. А что ты хочешь взамен?\n嗯……提议不错。你想换什么？"
 
     # --- ШАГ 2: ВЫБОР ПРЕДМЕТА У ГНОМА ---
     menu:
-        "Бамбуковая флейта":
-            $ desired_item_name = "Бамбуковая флейта"
-        "Сумка с зубами гоблинов":
-            $ desired_item_name = "Сумка с зубами гоблинов"
-        "Талисман удачи":
-            $ desired_item_name = "Талисман удачи"
-        "Зачарованный компас":
-            # Примечание: переменной для компаса нет, сделайте default compass = 0, если нужно.
-            $ desired_item_name = "Зачарованный компас"
-        "Большой рюкзак":
-            $ desired_item_name = "Большой рюкзак"
-        "Пчелиный воск":
-            $ desired_item_name = "Пчелиный воск"
-        "Ничего, я передумал":
+        "[item_bi('bambooFlute')]":
+            $ desired_item_var = "bambooFlute"
+        "[item_bi('goblinTeethBag')]":
+            $ desired_item_var = "goblinTeethBag"
+        "[item_bi('goodLuckCharm')]":
+            $ desired_item_var = "goodLuckCharm"
+        "[item_bi('compass')]":
+            $ desired_item_var = "compass"
+        "[item_bi('largeBackpack')]":
+            $ desired_item_var = "largeBackpack"
+        "[item_bi('honeycombWithBeeswax')]":
+            $ desired_item_var = "honeycombWithBeeswax"
+        "Ничего, я передумал / 算了，我改变主意了":
             jump choice_158
 
-    lbg "Так, значит, тебе нужен «[desired_item_name]»... Дай-ка подумать..."
-    e "Гном бросает кости, чтобы решить, насколько выгодна для него сделка."
+    $ desired_item_disp = item_bi(desired_item_var)
+
+    lbg "Так, значит, тебе нужен «[desired_item_disp]»... Дай-ка подумать...\n所以，你想要「[desired_item_disp]」……让我想想……"
+    e "Гном бросает кости, чтобы решить, насколько выгодна для него сделка.\n矮人掷骰子，判断这笔交易对他有多划算。"
 
     # --- ШАГ 3: РАСЧЕТ СДЕЛКИ ---
     python:
         roll = renpy.random.randint(1, 6)
 
-        inventory_map = {
-            "Черная маска": "blackmask", "Зелье здоровья": "healingPotion",
-            "Мешочек с камнями": "bagWithThreeStones", "Морской песок": "servingOfSeaSand",
-            "Костяной браслет": "braceletBones", "Тусклая цепь": "dimChain",
-            "Зеркало в золотой рамке": "goldFramedMirror", "Свиток пергамента": "scrollParchment",
-            "Таинственное зелье": "bottleWithTheInscription", "Пчелиный воск": "honeycombWithBeeswax",
-            "Флакон с пылью": "bottleDust", "Козий сыр": "goatCheese",
-            "Пустой кошелек": "emptyWallet", "Талисман удачи": "goodLuckCharm",
-            "Яд": "poison", "Духи": "spirits", "Парик": "wig",
-            "Бамбуковая флейта": "bambooFlute", "Сумка с зубами гоблинов": "goblinTeethBag",
-            "Большой рюкзак": "largeBackpack", "Зачарованный компас": "compass"
-        }
-        player_inventory_names = [name for name, var in inventory_map.items() if getattr(store, var, 0) > 0]
-
-        desired_item_var = inventory_map.get(desired_item_name)
+        selected_for_trade_vars = list(store.selected_for_trade_vars)
+        player_inventory_vars = [var for var in store.ru_names.keys() if getattr(store, var, 0) > 0]
 
         if roll == 1:
-            renpy.say(lbg, "Нет, так не пойдет! Эти четыре вещи меня не интересуют.")
-            other_items_player_has = [name for name in player_inventory_names if name not in selected_for_trade_names]
+            renpy.say(lbg, "Нет, так не пойдет! Эти четыре вещи меня не интересуют.\n不行不行！这四样东西我不感兴趣。")
+            other_items_player_has = [var for var in player_inventory_vars if var not in selected_for_trade_vars]
 
             if not other_items_player_has:
-                renpy.say(lbg, "И предложить-то тебе больше нечего... Уходи!")
+                renpy.say(lbg, "И предложить-то тебе больше нечего... Уходи!\n你也没别的东西可拿来谈了……走吧！")
                 renpy.jump("choice_158")
             else:
-                renpy.say(lbg, "Но... я вижу у тебя в мешке еще кое-что. Может, договоримся по-другому?")
-                renegotiate_menu = [(name, name) for name in other_items_player_has]
-                renegotiate_menu.append(("- Нет, спасибо, я ухожу", "cancel_renegotiate"))
+                renpy.say(lbg, "Но... я вижу у тебя в мешке еще кое-что. Может, договоримся по-другому?\n不过……我看你包里还有点别的。要不换个条件？")
+                renegotiate_menu = [(item_bi(var), var) for var in other_items_player_has]
+                renegotiate_menu.append(("- Нет, спасибо, я ухожу / 不用了，我走了", "cancel_renegotiate"))
 
-                renpy.say(lbg, f"Я готов отдать тебе «{desired_item_name}» за одну из этих вещиц. Что скажешь?")
-                chosen_counter_offer = renpy.display_menu(renegotiate_menu)
+                renpy.say(lbg, f"Я готов отдать тебе «{desired_item_disp}» за одну из этих вещиц. Что скажешь?\n我愿意用「{desired_item_disp}」换你其中一件。怎么样？")
+                chosen_counter_offer_var = renpy.display_menu(renegotiate_menu)
 
-                if chosen_counter_offer == "cancel_renegotiate":
+                if chosen_counter_offer_var == "cancel_renegotiate":
                     renpy.jump("choice_158")
                 else:
-                    item_to_lose_var = inventory_map[chosen_counter_offer]
-                    setattr(store, item_to_lose_var, getattr(store, item_to_lose_var, 0) - 1)
-                    if desired_item_var:
-                        setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
-                    renpy.say(lbg, f"Вот это дело! Забирай свой «{desired_item_name}», а я возьму «{chosen_counter_offer}».")
+                    setattr(store, chosen_counter_offer_var, getattr(store, chosen_counter_offer_var, 0) - 1)
+                    setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
+                    renpy.say(lbg, f"Вот это дело! Забирай свой «{desired_item_disp}», а я возьму «{item_bi(chosen_counter_offer_var)}».\n成交！你拿走「{desired_item_disp}」，我拿「{item_bi(chosen_counter_offer_var)}」。")
                     renpy.jump("barter_final_jump")
 
         elif 2 <= roll <= 5:
-            item_to_lose_name = renpy.random.choice(selected_for_trade_names)
-            item_to_lose_var = inventory_map[item_to_lose_name]
+            item_to_lose_var = renpy.random.choice(selected_for_trade_vars)
 
             setattr(store, item_to_lose_var, getattr(store, item_to_lose_var, 0) - 1)
-            if desired_item_var:
-                setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
-            renpy.say(lbg, f"Договорились! Я возьму себе твой «{item_to_lose_name}», а ты забирай «{desired_item_name}».")
+            setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
+
+            renpy.say(lbg, f"Договорились! Я возьму себе твой «{item_bi(item_to_lose_var)}», а ты забирай «{desired_item_disp}».\n说定了！我拿走你的「{item_bi(item_to_lose_var)}」，你带走「{desired_item_disp}」。")
             renpy.jump("barter_final_jump")
 
-        else: # roll == 6
-            renpy.say(lbg, f"Хе-хе, маловато будет! За такую ценную вещь, как «{desired_item_name}», я хочу ДВЕ твои безделушки!")
-            # Используем renpy.call, чтобы показать меню и вернуться к python блоку
-            renpy.call("barter_greedy_choice", desired_item_name=desired_item_name, selected_for_trade_names=selected_for_trade_names)
+        else:  # roll == 6
+            renpy.say(lbg, f"Хе-хе, маловато будет! За такую ценную вещь, как «{desired_item_disp}», я хочу ДВЕ твои безделушки!\n嘿嘿，这可不够！像「{desired_item_disp}」这么值钱的东西，我要你两样小玩意儿！")
+            renpy.call("barter_greedy_choice", desired_item_var=desired_item_var, selected_for_trade_vars=selected_for_trade_vars)
+    return
 
 
-label barter_greedy_choice(desired_item_name, selected_for_trade_names):
+label barter_greedy_choice(desired_item_var, selected_for_trade_vars):
     menu:
-        "Согласиться (отдать 2 случайных предмета)":
+        "Согласиться (отдать 2 случайных предмета) / 同意（交出2件随机物品）":
             python:
-                inventory_map = {
-                    "Черная маска": "blackmask", "Зелье здоровья": "healingPotion",
-                    "Мешочек с камнями": "bagWithThreeStones", "Морской песок": "servingOfSeaSand",
-                    "Костяной браслет": "braceletBones", "Тусклая цепь": "dimChain",
-                    "Зеркало в золотой рамке": "goldFramedMirror", "Свиток пергамента": "scrollParchment",
-                    "Таинственное зелье": "bottleWithTheInscription", "Пчелиный воск": "honeycombWithBeeswax",
-                    "Флакон с пылью": "bottleDust", "Козий сыр": "goatCheese",
-                    "Пустой кошелек": "emptyWallet", "Талисман удачи": "goodLuckCharm",
-                    "Яд": "poison", "Духи": "spirits", "Парик": "wig",
-                    "Бамбуковая флейта": "bambooFlute", "Сумка с зубами гоблинов": "goblinTeethBag",
-                    "Большой рюкзак": "largeBackpack", "Зачарованный компас": "compass"
-                }
+                items_to_lose_vars = renpy.random.sample(selected_for_trade_vars, 2)
+                for var in items_to_lose_vars:
+                    setattr(store, var, getattr(store, var, 0) - 1)
 
-                items_to_lose_names = renpy.random.sample(selected_for_trade_names, 2)
-                for name in items_to_lose_names:
-                    item_var = inventory_map[name]
-                    setattr(store, item_var, getattr(store, item_var, 0) - 1)
+                setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
 
-                desired_item_var = inventory_map.get(desired_item_name)
-                if desired_item_var:
-                    setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
-
-                renpy.say(lbg, f"Отличный выбор! Я забираю «{items_to_lose_names[0]}» и «{items_to_lose_names[1]}». Держи свою награду!")
+                renpy.say(
+                    lbg,
+                    f"Отличный выбор! Я забираю «{item_bi(items_to_lose_vars[0])}» и «{item_bi(items_to_lose_vars[1])}». Держи свою награду!\n好选择！我拿走「{item_bi(items_to_lose_vars[0])}」和「{item_bi(items_to_lose_vars[1])}」。给你奖赏！"
+                )
             jump barter_final_jump
 
-        "Отказаться от такой грабительской сделки":
-            lbg "Как знаешь, как знаешь... Значит, не договорились."
+        "Отказаться от такой грабительской сделки / 拒绝这笔敲诈交易":
+            lbg "Как знаешь, как знаешь... Значит, не договорились.\n随你便……那就谈不拢了。"
             jump choice_158
     return
 
 
 label barter_final_jump:
-    e "Сделка завершена. Вы покидаете хижину гнома."
+    e "Сделка завершена. Вы покидаете хижину гнома.\n交易完成。你离开了矮人的小屋。"
     # --- ШАГ 7: ПЕРЕХОД ПОСЛЕ ПОЛУЧЕНИЯ ПРЕДМЕТА ---
-    if desired_item_name == "Бамбуковая флейта":
+    if desired_item_var == "bambooFlute":
         jump choice_304
-    elif desired_item_name == "Сумка с зубами гоблинов":
+    elif desired_item_var == "goblinTeethBag":
         jump choice_45
-    elif desired_item_name == "Талисман удачи":
+    elif desired_item_var == "goodLuckCharm":
         jump choice_20
-    elif desired_item_name == "Зачарованный компас":
+    elif desired_item_var == "compass":
         jump choice_107
-    elif desired_item_name == "Большой рюкзак":
+    elif desired_item_var == "largeBackpack":
         jump choice_166
-    elif desired_item_name == "Пчелиный воск":
+    elif desired_item_var == "honeycombWithBeeswax":
         jump choice_200
     else:
-        # На случай, если что-то пойдет не так
         jump choice_158
 
 # КОНЕЦ КОДА ДЛЯ СИСТЕМЫ БАРТЕРА
+
 
 
 label choice_304:
@@ -5426,7 +5477,7 @@ label choice_188:
     $ gold -= 1
     s "Теперь количество вашего золота - {color=#FF00FF}[gold]{/color}"
     e "Попробуйте угадать число, которое выпадет на кости"
-    $ ans = renpy.input("Попробуйте угадать число, которое выпадет на кости")
+    $ ans = renpy.input("Попробуйте угадать число, которое выпадет на кости\n试着猜出骰子将掷出的数字")
     $ ans = ans.strip()
     s "На кости выпало - {color=#FF00FF}[dice]{/color}"
     if ans == "1" and dice == 1:
@@ -6312,7 +6363,7 @@ label choice_271:
     ga "Если не знаешь открывающего заклинания, следующий шаг вперед будет означать для тебя мгновенную смерть"
     e "Если вы знаете все четыре строки заклинания, разместите их в правильном порядке и прочитайте перед воротами"
     e "Три цифры скрыты внутри этих строк"
-    $ ans = renpy.input("Введите цифры из строк заклинания")
+    $ ans = renpy.input("Введите цифры из строк заклинания\n请输入咒语行中的数字")
     $ ans = ans.strip()
     if ans == "412":
         jump choice_412
@@ -6539,8 +6590,10 @@ label choice_135:
             jump choice_56
 
 label game_win:
-    "На этом наша история подходит к концу."
-    "Спасибо, что играли!"
+    show screen victory
+    pause 5.0
+    $ renpy.full_restart()
+    return
 
     # Добавляем небольшую паузу для драматического эффекта
     pause 2.0
@@ -6554,4 +6607,41 @@ label game_over:
     pause
     return
 
+label show_interstitial_ad:
+    python:
+        # 1. Сбрасываем флаг перед вызовом
+        persistent.ad_result = None
+
+        # 2. Определяем Python-функцию, которая будет вызвана из JS по завершении
+        def interstitial_finished_callback():
+            persistent.ad_result = "finished"
+
+        # 3. "Пробрасываем" эту функцию в JavaScript
+        renpy.emscripten.run_script(
+            'window.onInterstitialFinished = () => { renpy.python.interstitial_finished_callback(); };'
+        )
+
+        # 4. Вызываем JS-функцию для показа рекламы
+        renpy.javascript("showInterstitial();")
+
+    # 5. Ставим игру на паузу и ждем, пока JS не вызовет наш коллбэк
+    $ renpy.pause(hard=True)
+    while persistent.ad_result is None:
+        $ renpy.pause(0.1)
+
+    # 6. Сбрасываем флаг для будущих вызовов (хорошая практика)
+    $ persistent.ad_result = None
+
+    # 7. Просто возвращаемся к основному потоку игры
+    return
+
+label ad_closed_callback:
+    # Этот код выполнится, когда закроется полноэкранная реклама.
+    # Обычно здесь ничего делать не нужно, кроме возврата.
+    return
+
+label ad_error_callback:
+    # Этот код выполнится, если реклама не загрузилась.
+    # Мы тоже просто возвращаемся, чтобы игра не зависла.
+    e "Не удалось загрузить рекламу. Продолжаем..."
     return

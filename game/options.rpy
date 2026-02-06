@@ -1,4 +1,5 @@
-﻿## Данный файл содержит настройки, способные изменить вашу игру.
+# coding: utf-8
+## Данный файл содержит настройки, способные изменить вашу игру.
 ##
 ## Строки, начинающиеся  с двух '#' — комментарии, и вы не должны их
 ## раскомментировать. Строки, начинающиеся с одной '#' — комментированный код,
@@ -24,6 +25,8 @@ define gui.show_name = True
 ## Версия игры.
 
 define config.version = "1.0"
+
+define build.itch_project = "evsikoff.itch.io/khar"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
@@ -63,6 +66,8 @@ define config.has_voice = False
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
 define config.main_menu_music = "menu_theme.mp3"
+
+#define config.web_menu = False
 
 
 ## Переходы ####################################################################
@@ -123,6 +128,8 @@ define config.window_hide_transition = Dissolve(.2)
 
 default preferences.text_cps = 0
 
+# Android-specific settings
+define build.android_requirements = "pyjnius"
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
 ## от 0 до 30 — вполне допустимый диапазон.
