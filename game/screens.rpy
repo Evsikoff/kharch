@@ -804,9 +804,9 @@ screen about():
 
             ## gui.about обычно установлено в options.rpy.
             if gui.about:
-                text "[gui.about!t]\n"
+                text "[gui.about!t]\n" size 26
 
-            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]") size 24
 
 
 style about_label is gui_label
@@ -815,6 +815,10 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+style about_text:
+    size 26
+    line_spacing 2
 
 
 ## Экраны загрузки и сохранения ################################################
