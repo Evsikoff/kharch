@@ -169,19 +169,25 @@ python early:
         renpy.emscripten.run_script("showRewardedAd('reward_received');")
 
 init python:
+    _analytics_status = "NOT ANDROID"
+
     if renpy.android:
+        _analytics_status = "STARTING..."
         try:
             from jnius import autoclass
 
             try:
                 _activity = autoclass('org.renpy.android.PythonSDLActivity').mActivity
+                _analytics_status = "Activity: PythonSDLActivity"
             except Exception:
                 _activity = autoclass('org.kivy.android.PythonActivity').mActivity
+                _analytics_status = "Activity: PythonActivity"
 
             _Settings = autoclass('android.provider.Settings$Secure')
             _client_id = _Settings.getString(
                 _activity.getContentResolver(), _Settings.ANDROID_ID
             )
+            _analytics_status += " | ID: " + str(_client_id)
 
             try:
                 from urllib.request import Request, urlopen
@@ -196,9 +202,20 @@ init python:
             }).encode('utf-8')
 
             _req = Request('https://khar.ttp3d.cn/counter.php', data=_data)
-            urlopen(_req, timeout=15)
-        except Exception:
-            pass
+            _resp = urlopen(_req, timeout=15)
+            _resp_body = _resp.read().decode('utf-8', errors='replace')
+            _analytics_status += " | HTTP " + str(_resp.getcode()) + " | " + _resp_body[:200]
+        except Exception as _e:
+            _analytics_status += " | ERROR: " + str(_e)
+
+# DEBUG: экран для отображения статуса аналитики (удалить после отладки)
+screen analytics_debug():
+    zorder 100
+    frame:
+        xalign 0.5 yalign 0.0
+        padding (20, 10)
+        background "#000000CC"
+        text _analytics_status size 18 color "#00FF00"
 
 # Игра начинается здесь:
 
@@ -254,7 +271,7 @@ style small_say_window:
 
 label start:
 
-
+    show screen analytics_debug
     play music "audio/main_theme.mp3" loop
     scene 1-1
 
