@@ -169,20 +169,18 @@ python early:
         renpy.emscripten.run_script("showRewardedAd('reward_received');")
 
 init python:
-    import threading
-
-    def _send_android_analytics():
+    if renpy.android:
         try:
-            if not renpy.android:
-                return
-
             from jnius import autoclass
 
-            PythonSDLActivity = autoclass('org.renpy.android.PythonSDLActivity')
-            Settings = autoclass('android.provider.Settings$Secure')
-            context = PythonSDLActivity.mActivity
-            client_id = Settings.getString(
-                context.getContentResolver(), Settings.ANDROID_ID
+            try:
+                _activity = autoclass('org.renpy.android.PythonSDLActivity').mActivity
+            except Exception:
+                _activity = autoclass('org.kivy.android.PythonActivity').mActivity
+
+            _Settings = autoclass('android.provider.Settings$Secure')
+            _client_id = _Settings.getString(
+                _activity.getContentResolver(), _Settings.ANDROID_ID
             )
 
             try:
@@ -192,17 +190,15 @@ init python:
                 from urllib2 import Request, urlopen
                 from urllib import urlencode
 
-            data = urlencode({
-                'clientId': client_id,
+            _data = urlencode({
+                'clientId': _client_id,
                 'group': 'khar'
             }).encode('utf-8')
 
-            req = Request('https://khar.ttp3d.cn/counter.php', data=data)
-            urlopen(req, timeout=10)
+            _req = Request('https://khar.ttp3d.cn/counter.php', data=_data)
+            urlopen(_req, timeout=15)
         except Exception:
             pass
-
-    threading.Thread(target=_send_android_analytics, daemon=True).start()
 
 # Игра начинается здесь:
 
