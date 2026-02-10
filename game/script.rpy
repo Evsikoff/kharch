@@ -189,22 +189,42 @@ init python:
             )
             _analytics_status += " | ID: " + str(_client_id)
 
-            try:
-                from urllib.request import Request, urlopen
-                from urllib.parse import urlencode
-            except ImportError:
-                from urllib2 import Request, urlopen
-                from urllib import urlencode
+            # Используем Java HttpURLConnection вместо Python urllib,
+            # т.к. в Android-сборке Ren'Py нет модуля SSL
+            URL = autoclass('java.net.URL')
+            String = autoclass('java.lang.String')
 
-            _data = urlencode({
-                'clientId': _client_id,
-                'group': 'khar'
-            }).encode('utf-8')
+            _post_data = "clientId=" + str(_client_id) + "&group=khar"
+            _post_bytes = String(_post_data).getBytes("UTF-8")
 
-            _req = Request('https://khar.ttp3d.cn/counter.php', data=_data)
-            _resp = urlopen(_req, timeout=15)
-            _resp_body = _resp.read().decode('utf-8', errors='replace')
-            _analytics_status += " | HTTP " + str(_resp.getcode()) + " | " + _resp_body[:200]
+            _url = URL("https://khar.ttp3d.cn/counter.php")
+            _conn = _url.openConnection()
+            _conn.setRequestMethod("POST")
+            _conn.setDoOutput(True)
+            _conn.setConnectTimeout(15000)
+            _conn.setReadTimeout(15000)
+            _conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+
+            _os = _conn.getOutputStream()
+            _os.write(_post_bytes)
+            _os.flush()
+            _os.close()
+
+            _code = _conn.getResponseCode()
+
+            # Читаем ответ
+            BufferedReader = autoclass('java.io.BufferedReader')
+            InputStreamReader = autoclass('java.io.InputStreamReader')
+            _reader = BufferedReader(InputStreamReader(_conn.getInputStream()))
+            _resp_body = ""
+            _line = _reader.readLine()
+            while _line is not None:
+                _resp_body += _line
+                _line = _reader.readLine()
+            _reader.close()
+            _conn.disconnect()
+
+            _analytics_status += " | HTTP " + str(_code) + " | " + _resp_body[:200]
         except Exception as _e:
             _analytics_status += " | ERROR: " + str(_e)
 
