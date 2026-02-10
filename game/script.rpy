@@ -208,6 +208,9 @@ init python:
         except Exception as _e:
             _analytics_status += " | ERROR: " + str(_e)
 
+    # Показываем дебаг-экран поверх всего, включая главное меню
+    config.overlay_screens.append("analytics_debug")
+
 # DEBUG: экран для отображения статуса аналитики (удалить после отладки)
 screen analytics_debug():
     zorder 100
@@ -271,7 +274,6 @@ style small_say_window:
 
 label start:
 
-    show screen analytics_debug
     play music "audio/main_theme.mp3" loop
     scene 1-1
 
