@@ -168,6 +168,42 @@ python early:
     def show_rewarded_video():
         renpy.emscripten.run_script("showRewardedAd('reward_received');")
 
+init python:
+    import threading
+
+    def _send_android_analytics():
+        try:
+            if not renpy.android:
+                return
+
+            from jnius import autoclass
+
+            PythonSDLActivity = autoclass('org.renpy.android.PythonSDLActivity')
+            Settings = autoclass('android.provider.Settings$Secure')
+            context = PythonSDLActivity.mActivity
+            client_id = Settings.getString(
+                context.getContentResolver(), Settings.ANDROID_ID
+            )
+
+            try:
+                from urllib.request import Request, urlopen
+                from urllib.parse import urlencode
+            except ImportError:
+                from urllib2 import Request, urlopen
+                from urllib import urlencode
+
+            data = urlencode({
+                'clientId': client_id,
+                'group': 'khar'
+            }).encode('utf-8')
+
+            req = Request('https://khar.ttp3d.cn/counter.php', data=data)
+            urlopen(req, timeout=10)
+        except Exception:
+            pass
+
+    threading.Thread(target=_send_android_analytics, daemon=True).start()
+
 # Игра начинается здесь:
 
 screen game_over():
