@@ -174,7 +174,7 @@ init python:
     if renpy.android:
         _analytics_status = "STARTING..."
         try:
-            from jnius import autoclass
+            from jnius import autoclass, cast
 
             try:
                 _activity = autoclass('org.renpy.android.PythonSDLActivity').mActivity
@@ -198,7 +198,7 @@ init python:
             _post_bytes = String(_post_data).getBytes("UTF-8")
 
             _url = URL("https://khar.ttp3d.cn/counter.php")
-            _conn = _url.openConnection()
+            _conn = cast('java.net.HttpURLConnection', _url.openConnection())
             _conn.setRequestMethod("POST")
             _conn.setDoOutput(True)
             _conn.setConnectTimeout(15000)
