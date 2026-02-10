@@ -169,28 +169,20 @@ python early:
         renpy.emscripten.run_script("showRewardedAd('reward_received');")
 
 init python:
-    _analytics_status = "NOT ANDROID"
-
     if renpy.android:
-        _analytics_status = "STARTING..."
         try:
             from jnius import autoclass, cast
 
             try:
                 _activity = autoclass('org.renpy.android.PythonSDLActivity').mActivity
-                _analytics_status = "Activity: PythonSDLActivity"
             except Exception:
                 _activity = autoclass('org.kivy.android.PythonActivity').mActivity
-                _analytics_status = "Activity: PythonActivity"
 
             _Settings = autoclass('android.provider.Settings$Secure')
             _client_id = _Settings.getString(
                 _activity.getContentResolver(), _Settings.ANDROID_ID
             )
-            _analytics_status += " | ID: " + str(_client_id)
 
-            # Используем Java HttpURLConnection вместо Python urllib,
-            # т.к. в Android-сборке Ren'Py нет модуля SSL
             URL = autoclass('java.net.URL')
             String = autoclass('java.lang.String')
 
@@ -210,35 +202,10 @@ init python:
             _os.flush()
             _os.close()
 
-            _code = _conn.getResponseCode()
-
-            # Читаем ответ
-            BufferedReader = autoclass('java.io.BufferedReader')
-            InputStreamReader = autoclass('java.io.InputStreamReader')
-            _reader = BufferedReader(InputStreamReader(_conn.getInputStream()))
-            _resp_body = ""
-            _line = _reader.readLine()
-            while _line is not None:
-                _resp_body += _line
-                _line = _reader.readLine()
-            _reader.close()
+            _conn.getResponseCode()
             _conn.disconnect()
-
-            _analytics_status += " | HTTP " + str(_code) + " | " + _resp_body[:200]
-        except Exception as _e:
-            _analytics_status += " | ERROR: " + str(_e)
-
-    # Показываем дебаг-экран поверх всего, включая главное меню
-    config.overlay_screens.append("analytics_debug")
-
-# DEBUG: экран для отображения статуса аналитики (удалить после отладки)
-screen analytics_debug():
-    zorder 100
-    frame:
-        xalign 0.5 yalign 0.0
-        padding (20, 10)
-        background "#000000CC"
-        text _analytics_status size 18 color "#00FF00"
+        except Exception:
+            pass
 
 # Игра начинается здесь:
 
