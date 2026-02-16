@@ -678,9 +678,9 @@ label choice_58:
     pause 0.5
     e "Эльфы с трудом встают на ноги и неуклюже нащупывают свое оружие. Сражайтесь с ними по одному."
     $ enemies = [
-        {"name": "Первый Черный Эльф", "mastery": 6, "health": 5},
-        {"name": "Второй Черный Эльф", "mastery": 7, "health": 4},
-        {"name": "Третий Черный Эльф", "mastery": 5, "health": 5},
+        {"name": "第一黑暗精灵", "mastery": 6, "health": 5}, # Первый Черный Эльф
+        {"name": "第二黑暗精灵", "mastery": 7, "health": 4}, # Второй Черный Эльф
+        {"name": "第三黑暗精灵", "mastery": 5, "health": 5}, # Третий Черный Эльф
     ]
     jump choice_58_loop
 
@@ -765,7 +765,7 @@ label choice_256:
     pause 0.5
     e "Пред вами лежит полуразложившийся труп! Его гниющая голова наполовину череп наполовину гниющая плоть, и вы с трудом подавляете крик отвращения и ужаса."
     e "Но когда вы отворачиваетесь от него, злобная улыбка искажает оставшуюся часть губ трупа, и он вскакивает на ноги. Тварь прыгает на вас, и вы едва успеваете выхватить оружие."
-    $ current_enemy = {"name": "Оживший Труп", "mastery": 6, "health": 6}
+    $ current_enemy = {"name": "复活的尸体", "mastery": 6, "health": 6} # Оживший Труп
     jump choice_256_fight
 
 label choice_256_fight:
@@ -951,12 +951,12 @@ label choice_11:
     e "После того как живой труп упал поверженный, части его тела разлетелись в разные стороны и пытаются на вас напасть!"
     e "Вам ничего не остается, кроме как продолжить битву с шестью противниками разом: головой, туловищем двумя ногами и двумя руками."
     $ enemies = [
-        {"name": "Голова", "mastery": 3, "health": 1},
-        {"name": "Туловище", "mastery": 2, "health": 1},
-        {"name": "Левая Рука", "mastery": 3, "health": 1},
-        {"name": "Правая Рука", "mastery": 3, "health": 1},
-        {"name": "Левая Нога", "mastery": 3, "health": 1},
-        {"name": "Правая Нога", "mastery": 3, "health": 1},
+        {"name": "头部", "mastery": 3, "health": 1}, # Голова
+        {"name": "躯干", "mastery": 2, "health": 1}, # Туловище
+        {"name": "左手", "mastery": 3, "health": 1}, # Левая Рука
+        {"name": "右手", "mastery": 3, "health": 1}, # Правая Рука
+        {"name": "左腿", "mastery": 3, "health": 1}, # Левая Нога
+        {"name": "右腿", "mastery": 3, "health": 1}, # Правая Нога
     ]
     jump choice_11_fight
 
@@ -1658,7 +1658,7 @@ label choice_119:
     scene 66-1
     show Pork
     e "Свинн срывает длинную цепь со стены и раскручивает ее над головой, чтобы наносить вам удары."
-    $ current_enemy = {"name": "Свинн", "mastery": 8, "health": 7}
+    $ current_enemy = {"name": "斯温", "mastery": 8, "health": 7} # Свинн
     jump choice_119_fight
 
 label choice_119_fight:
@@ -1792,7 +1792,7 @@ label choice_243:
     e "Когда вы достаете оружие, существо громко ревет и бросается на вас."
     e "Вы должны сражаться с Пожирателем, который атакует, сильно раскачивая своей головой из стороны в сторону."
     e "При этом его длинные щупальца стараются схватить вас."
-    $ current_enemy = {"name": "Пожиратель", "mastery": 8, "health": 7}
+    $ current_enemy = {"name": "吞噬者", "mastery": 8, "health": 7} # Пожиратель
     jump choice_243_fight
 
 label choice_243_fight:
@@ -2028,8 +2028,8 @@ label choice_234:
     play sound "audio/33-1.mp3"
     pause 3
     e "Бой начинается! Варвар и Огр сходятся на ринге, толпа ревет от восторга."
-    $ barbarian = {"name": "Варвар", "mastery": 8, "health": 8}
-    $ ogre = {"name": "Огр", "mastery": 9, "health": 12}
+    $ barbarian = {"name": "野蛮人", "mastery": 8, "health": 8} # Варвар
+    $ ogre = {"name": "食人魔", "mastery": 9, "health": 12} # Огр
     $ winner = 0
     jump choice_234_fight
 
@@ -2154,13 +2154,13 @@ label choice_321:
     pause 0.5
     if streetfighter == 1:
         $ enemies = [
-            {"name": "Спрайт", "mastery": 5, "health": 6},
-            {"name": "Гном", "mastery": 6, "health": 6}
+            {"name": "精灵", "mastery": 5, "health": 6}, # Спрайт
+            {"name": "侏儒", "mastery": 6, "health": 6} # Гном
         ]
     else:
         $ enemies = [
-            {"name": "Пикси", "mastery": 5, "health": 5},
-            {"name": "Гном", "mastery": 6, "health": 6}
+            {"name": "皮克西", "mastery": 5, "health": 5}, # Пикси
+            {"name": "侏儒", "mastery": 6, "health": 6} # Гном
         ]
     jump choice_321_fight
 
@@ -2577,8 +2577,8 @@ label choice_311:
     e "Вы хватаете дерущихся малышей и растаскиваете их."
     e "Однако мелкие засранцы вам вовсе не благодарны, и теперь они оба поворачиваются, чтобы напасть на вас!"
     $ enemies = [
-        {"name": "Спрайт", "mastery": 5, "health": 6},
-        {"name": "Пикси", "mastery": 5, "health": 5}
+        {"name": "精灵", "mastery": 5, "health": 6}, # Спрайт
+        {"name": "皮克西", "mastery": 5, "health": 5} # Пикси
     ]
     jump choice_311_fight
 
@@ -2843,7 +2843,7 @@ label choice_13:
     if dice == 6:
         e "Стрела пролетела мимо"
     e "Вы вступаете в бой с Вангорном"
-    $ current_enemy = {"name": "Вангорн", "mastery": 7, "health": 8}
+    $ current_enemy = {"name": "凡戈恩", "mastery": 7, "health": 8} # Вангорн
     jump choice_13_fight
 
 label choice_13_fight:
@@ -3145,7 +3145,7 @@ label choice_55:
     e "Это смертельно опасный Человек-Богомол."
     e "Если он схватит вас, то вырваться из его шипастых ладоней будет невозможно, он подтянет вас к себе, и его острые зубы убьют вас за секунду."
     e "Тем не менее, вы можете атаковать его руки, и если перерубите их, он станет беспомощен."
-    $ current_enemy = {"name": "Человек-Богомол", "mastery": 6, "health": 5}
+    $ current_enemy = {"name": "螳螂人", "mastery": 6, "health": 5} # Человек-Богомол
     jump choice_55_fight
 
 label choice_55_fight:
@@ -3261,7 +3261,7 @@ label choice_95:
     pause 1
     show Lizard
     e "Шипастый зверь обнажает острые зубы и прыгает на вас."
-    $ current_enemy = {"name": "Шипастый Зверь", "mastery": 5, "health": 7}
+    $ current_enemy = {"name": "多刺怪兽", "mastery": 5, "health": 7} # Шипастый Зверь
     jump choice_95_fight
 
 label choice_95_fight:
@@ -3646,7 +3646,7 @@ label choice_323:
     e "Бой начался! Огромный огр, местный чемпион, выходит на ринг, сжимая массивную дубину. Его глаза горят яростью, и толпа ревет от восторга."
     play sound "audio/33-1.mp3"
     pause 2
-    $ current_enemy = {"name": "Огр", "mastery": 9, "health": 12}
+    $ current_enemy = {"name": "食人魔", "mastery": 9, "health": 12} # Огр
     jump choice_323_fight
 
 label choice_323_fight:
@@ -3949,7 +3949,7 @@ label choice_67:
     e "Вы мгновение смотрите друг на друга."
     e "Снаружи доносится голос художника"
     pa "Напади на него! И отбери все деньги!"
-    $ current_enemy = {"name": "Ваш Двойник", "mastery": mastery, "health": health}
+    $ current_enemy = {"name": "你的分身", "mastery": mastery, "health": health} # Ваш Двойник
     jump choice_67_fight
 
 label choice_67_fight:
@@ -4042,7 +4042,7 @@ label choice_44:
     pause 0.5
     e "Вы пытаетесь схватить волшебную кисть, но она ловко уклоняется от ваших рук и продолжает рисовать ваш портрет."
     e "Потеряв терпение, вы беретесь за оружие и пытаетесь сломать ее."
-    $ current_enemy = {"name": "Летающая Кисть", "mastery": 8, "health": 5}
+    $ current_enemy = {"name": "飞行画笔", "mastery": 8, "health": 5} # Летающая Кисть
     $ fight_round = 0
     jump choice_44_fight
 
@@ -4563,7 +4563,7 @@ label choice_77:
     show SlimeEater
     e "Он видит вас и громко ревет, протягивая к вам свои склизкие руки."
     e "Придется сразиться с ним"
-    $ current_enemy = {"name": "Пожиратель Слизи", "mastery": 7, "health": 11}
+    $ current_enemy = {"name": "史莱姆吞噬者", "mastery": 7, "health": 11} # Пожиратель Слизи
     jump choice_77_fight
 
 label choice_77_fight:
@@ -4903,7 +4903,7 @@ label choice_147:
         e "Ваше мастерство не позволило сделать задуманное! Вы зря потратили стрелу."
     e "Вы выбрали правильное оружие для боя с призраком, ведь ему может повредить только серебро, а наконечники ваших стрел из серебра."
     $ arrows = 10
-    $ current_enemy = {"name": "Призрак Смерти", "mastery": 9, "health": hGhost}
+    $ current_enemy = {"name": "死亡幽灵", "mastery": 9, "health": hGhost} # Призрак Смерти
     jump choice_147_fight
 
 label choice_147_fight:
@@ -5819,8 +5819,8 @@ label choice_118:
     scene 285-3
     e "Вы хватаетесь за свое оружие и наносите удары гарпиям, когда они спускаются вниз."
     $ enemies = [
-        {"name": "Первая Гарпия", "mastery": 7, "health": 6},
-        {"name": "Вторая Гарпия", "mastery": 6, "health": 6}
+        {"name": "第一鹰身女妖", "mastery": 7, "health": 6}, # Первая Гарпия
+        {"name": "第二鹰身女妖", "mastery": 6, "health": 6} # Вторая Гарпия
     ]
     jump choice_118_fight
 
