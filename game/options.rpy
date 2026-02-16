@@ -127,6 +127,8 @@ define config.window_hide_transition = Dissolve(.2)
 ## секунду.
 
 default preferences.text_cps = 0
+default preferences.skip_after_choices = False
+default preferences.transitions = 2
 
 # Android-specific settings
 define build.android_requirements = "pyjnius"
