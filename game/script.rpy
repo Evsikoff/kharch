@@ -215,10 +215,10 @@ screen game_over():
         xalign 0.5 yalign 0.5
         padding (20, 20)
         vbox:
-            text "Конец игры / 游戏结束" size 40 color "#ff0000" xalign 0.5
-            text "Ваше здоровье исчерпано! / 您的健康已耗尽！" size 24 xalign 0.5
-            textbutton "Выйти / 退出" xalign 0.5 action Quit(confirm=False)
-            textbutton "Начать заново / 重新开始" xalign 0.5 action Start()
+            text "游戏结束" size 40 color "#ff0000" xalign 0.5
+            text "您的健康已耗尽！" size 24 xalign 0.5
+            textbutton "退出" xalign 0.5 action Quit(confirm=False)
+            textbutton "重新开始" xalign 0.5 action Start()
 
 screen victory():
     modal True
@@ -226,11 +226,11 @@ screen victory():
         xalign 0.5 yalign 0.5
         padding (20, 20)
         vbox:
-            text "Победа! / 胜利！" size 40 color "#00ff00" xalign 0.5
-            text "Вы преодолели Кхар и вошли в Бакланд! / 您已经克服了Khar并进入了Bakland！" size 24 xalign 0.5
-            text "На этом наша история подходит к концу. / 我们的故事到此结束。" size 20 xalign 0.5
-            text "Спасибо, что играли! / 感谢您的游玩！" size 20 xalign 0.5
-            textbutton "Играть снова / 再玩一次" xalign 0.5 action Start()
+            text "胜利！" size 40 color "#00ff00" xalign 0.5
+            text "您已经克服了Khar并进入了Bakland！" size 24 xalign 0.5
+            text "我们的故事到此结束。" size 20 xalign 0.5
+            text "感谢您的游玩！" size 20 xalign 0.5
+            textbutton "再玩一次" xalign 0.5 action Start()
 
 screen rune_choice():
     modal True  # Блокирует взаимодействие с фоном
@@ -2003,7 +2003,7 @@ label choice_190:
     e "Каждая монета, которую вы поставите на варвара, принесет вам выигрыш в 3 золотых, а если поставите на огра, то каждые 3 монеты дадут выигрыш в 1 золотой."
     e "Это если вы угадаете победителя, если не угадаете, то теряете свою ставку."
     s "Количество вашего золота - {color=#FF00FF}[gold]{/color}"
-    $ user_input = renpy.input("Введите сумму ставки:\n输入下注金额：")
+    $ user_input = renpy.input("输入下注金额：")
     $ user_input = user_input.strip()  # Удаляем пробелы
     if user_input.isdigit() or (user_input.startswith("-") and user_input[1:].isdigit()):
         $ bidAmount = int(user_input)
@@ -3840,7 +3840,7 @@ label choice_301:
     bs "Старик чувствует приближение смерти и решает разделить свое богатство между сыновьями."
     bs "Он дает 5 золотых своему второму из самых младших сыновей, 13 своему старшему и 9 четвертому из самых младших."
     bs "Сколько всего у него было золотых монет?"
-    $ ans = renpy.input("Введите правильный ответ!\n请输入正确答案！")
+    $ ans = renpy.input("请输入正确答案！")
     $ ans = ans.strip()
     if (ans.isdigit() or (ans.startswith("-") and ans[1:].isdigit())) and ans == "48":
         e "Ответ верный!"
@@ -5124,8 +5124,8 @@ label choice_324:
 
 label choice_264:
     scene 324-1
-    lbg "Славно, славно!\n好极了，好极了！"
-    lbg "Давайте посмотрим, какую сделку мы с вами можем заключить сегодня\n让我们看看今天能做什么交易。"
+    lbg "好极了，好极了！"
+    lbg "让我们看看今天能做什么交易。"
 
     python:
         # --- БАРТЕР: двухъязычные названия предметов (RU + 中文) ---
@@ -5178,9 +5178,8 @@ label choice_264:
         }
 
         def item_bi(var_name):
-            ru = store.ru_names.get(var_name, var_name)
             zh = store.zh_names.get(var_name, "")
-            return (ru + " / " + zh) if zh else ru
+            return zh if zh else var_name
 
         # делаем доступной в скрипте/экранах по имени item_bi(...)
         store.item_bi = item_bi
@@ -5190,20 +5189,20 @@ label choice_264:
 
         # Проверяем, есть ли у игрока хотя бы 4 предмета для обмена.
         if len(player_inventory_vars) < 4:
-            renpy.say(lbg, "Хм, я вижу, у тебя маловато вещей для серьезного обмена. Приходи, когда разбогатеешь!\n嗯，我看你手头的东西不够做笔像样的交换。等你更富了再来！")
+            renpy.say(lbg, "嗯，我看你手头的东西不够做笔像样的交换。等你更富了再来！")
             renpy.jump("choice_158")
 
         # --- ШАГ 1: ВЫБОР 4 ПРЕДМЕТОВ ИГРОКОМ ---
-        renpy.say(lbg, "Выбери четыре вещицы, которые хочешь предложить на обмен. Только четыре, не больше и не меньше!\n选择四样你想拿来交换的小玩意儿。只准四样，不多也不少！")
+        renpy.say(lbg, "选择四样你想拿来交换的小玩意儿。只准四样，不多也不少！")
 
         store.selected_for_trade_vars = []
         available_to_select = list(player_inventory_vars)
 
         for i in range(4):
             menu_choices = [(item_bi(var), var) for var in available_to_select]
-            menu_choices.append(("- Отказаться от обмена / 取消交换", "cancel_trade"))
+            menu_choices.append(("- 取消交换", "cancel_trade"))
 
-            renpy.say(lbg, f"Выбери предмет {i + 1} из 4:\n选择第 {i + 1} 件（共4件）：")
+            renpy.say(lbg, f"选择第 {i + 1} 件（共4件）：")
             chosen_var = renpy.display_menu(menu_choices)
 
             if chosen_var == "cancel_trade":
@@ -5212,7 +5211,7 @@ label choice_264:
             store.selected_for_trade_vars.append(chosen_var)
             available_to_select.remove(chosen_var)
 
-    lbg "Хммм... Интересное предложение. А что ты хочешь взамен?\n嗯……提议不错。你想换什么？"
+    lbg "嗯……提议不错。你想换什么？"
 
     # --- ШАГ 2: ВЫБОР ПРЕДМЕТА У ГНОМА ---
     menu:
@@ -5228,13 +5227,13 @@ label choice_264:
             $ desired_item_var = "largeBackpack"
         "[item_bi('honeycombWithBeeswax')]":
             $ desired_item_var = "honeycombWithBeeswax"
-        "Ничего, я передумал / 算了，我改变主意了":
+        "算了，我改变主意了":
             jump choice_158
 
     $ desired_item_disp = item_bi(desired_item_var)
 
-    lbg "Так, значит, тебе нужен «[desired_item_disp]»... Дай-ка подумать...\n所以，你想要「[desired_item_disp]」……让我想想……"
-    e "Гном бросает кости, чтобы решить, насколько выгодна для него сделка.\n矮人掷骰子，判断这笔交易对他有多划算。"
+    lbg "所以，你想要「[desired_item_disp]」……让我想想……"
+    e "矮人掷骰子，判断这笔交易对他有多划算。"
 
     # --- ШАГ 3: РАСЧЕТ СДЕЛКИ ---
     python:
@@ -5244,18 +5243,18 @@ label choice_264:
         player_inventory_vars = [var for var in store.ru_names.keys() if getattr(store, var, 0) > 0]
 
         if roll == 1:
-            renpy.say(lbg, "Нет, так не пойдет! Эти четыре вещи меня не интересуют.\n不行不行！这四样东西我不感兴趣。")
+            renpy.say(lbg, "不行不行！这四样东西我不感兴趣。")
             other_items_player_has = [var for var in player_inventory_vars if var not in selected_for_trade_vars]
 
             if not other_items_player_has:
-                renpy.say(lbg, "И предложить-то тебе больше нечего... Уходи!\n你也没别的东西可拿来谈了……走吧！")
+                renpy.say(lbg, "你也没别的东西可拿来谈了……走吧！")
                 renpy.jump("choice_158")
             else:
-                renpy.say(lbg, "Но... я вижу у тебя в мешке еще кое-что. Может, договоримся по-другому?\n不过……我看你包里还有点别的。要不换个条件？")
+                renpy.say(lbg, "不过……我看你包里还有点别的。要不换个条件？")
                 renegotiate_menu = [(item_bi(var), var) for var in other_items_player_has]
-                renegotiate_menu.append(("- Нет, спасибо, я ухожу / 不用了，我走了", "cancel_renegotiate"))
+                renegotiate_menu.append(("- 不用了，我走了", "cancel_renegotiate"))
 
-                renpy.say(lbg, f"Я готов отдать тебе «{desired_item_disp}» за одну из этих вещиц. Что скажешь?\n我愿意用「{desired_item_disp}」换你其中一件。怎么样？")
+                renpy.say(lbg, f"我愿意用「{desired_item_disp}」换你其中一件。怎么样？")
                 chosen_counter_offer_var = renpy.display_menu(renegotiate_menu)
 
                 if chosen_counter_offer_var == "cancel_renegotiate":
@@ -5263,7 +5262,7 @@ label choice_264:
                 else:
                     setattr(store, chosen_counter_offer_var, getattr(store, chosen_counter_offer_var, 0) - 1)
                     setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
-                    renpy.say(lbg, f"Вот это дело! Забирай свой «{desired_item_disp}», а я возьму «{item_bi(chosen_counter_offer_var)}».\n成交！你拿走「{desired_item_disp}」，我拿「{item_bi(chosen_counter_offer_var)}」。")
+                    renpy.say(lbg, f"成交！你拿走「{desired_item_disp}」，我拿「{item_bi(chosen_counter_offer_var)}」。")
                     renpy.jump("barter_final_jump")
 
         elif 2 <= roll <= 5:
@@ -5272,18 +5271,18 @@ label choice_264:
             setattr(store, item_to_lose_var, getattr(store, item_to_lose_var, 0) - 1)
             setattr(store, desired_item_var, getattr(store, desired_item_var, 0) + 1)
 
-            renpy.say(lbg, f"Договорились! Я возьму себе твой «{item_bi(item_to_lose_var)}», а ты забирай «{desired_item_disp}».\n说定了！我拿走你的「{item_bi(item_to_lose_var)}」，你带走「{desired_item_disp}」。")
+            renpy.say(lbg, f"说定了！我拿走你的「{item_bi(item_to_lose_var)}」，你带走「{desired_item_disp}」。")
             renpy.jump("barter_final_jump")
 
         else:  # roll == 6
-            renpy.say(lbg, f"Хе-хе, маловато будет! За такую ценную вещь, как «{desired_item_disp}», я хочу ДВЕ твои безделушки!\n嘿嘿，这可不够！像「{desired_item_disp}」这么值钱的东西，我要你两样小玩意儿！")
+            renpy.say(lbg, f"嘿嘿，这可不够！像「{desired_item_disp}」这么值钱的东西，我要你两样小玩意儿！")
             renpy.call("barter_greedy_choice", desired_item_var=desired_item_var, selected_for_trade_vars=selected_for_trade_vars)
     return
 
 
 label barter_greedy_choice(desired_item_var, selected_for_trade_vars):
     menu:
-        "Согласиться (отдать 2 случайных предмета) / 同意（交出2件随机物品）":
+        "同意（交出2件随机物品）":
             python:
                 items_to_lose_vars = renpy.random.sample(selected_for_trade_vars, 2)
                 for var in items_to_lose_vars:
@@ -5293,18 +5292,18 @@ label barter_greedy_choice(desired_item_var, selected_for_trade_vars):
 
                 renpy.say(
                     lbg,
-                    f"Отличный выбор! Я забираю «{item_bi(items_to_lose_vars[0])}» и «{item_bi(items_to_lose_vars[1])}». Держи свою награду!\n好选择！我拿走「{item_bi(items_to_lose_vars[0])}」和「{item_bi(items_to_lose_vars[1])}」。给你奖赏！"
+                    f"好选择！我拿走「{item_bi(items_to_lose_vars[0])}」和「{item_bi(items_to_lose_vars[1])}」。给你奖赏！"
                 )
             jump barter_final_jump
 
-        "Отказаться от такой грабительской сделки / 拒绝这笔敲诈交易":
-            lbg "Как знаешь, как знаешь... Значит, не договорились.\n随你便……那就谈不拢了。"
+        "拒绝这笔敲诈交易":
+            lbg "随你便……那就谈不拢了。"
             jump choice_158
     return
 
 
 label barter_final_jump:
-    e "Сделка завершена. Вы покидаете хижину гнома.\n交易完成。你离开了矮人的小屋。"
+    e "交易完成。你离开了矮人的小屋。"
     # --- ШАГ 7: ПЕРЕХОД ПОСЛЕ ПОЛУЧЕНИЯ ПРЕДМЕТА ---
     if desired_item_var == "bambooFlute":
         jump choice_304
@@ -5515,7 +5514,7 @@ label choice_188:
     $ gold -= 1
     s "Теперь количество вашего золота - {color=#FF00FF}[gold]{/color}"
     e "Попробуйте угадать число, которое выпадет на кости"
-    $ ans = renpy.input("Попробуйте угадать число, которое выпадет на кости\n试着猜出骰子将掷出的数字")
+    $ ans = renpy.input("试着猜出骰子将掷出的数字")
     $ ans = ans.strip()
     s "На кости выпало - {color=#FF00FF}[dice]{/color}"
     if ans == "1" and dice == 1:
@@ -6401,7 +6400,7 @@ label choice_271:
     ga "Если не знаешь открывающего заклинания, следующий шаг вперед будет означать для тебя мгновенную смерть"
     e "Если вы знаете все четыре строки заклинания, разместите их в правильном порядке и прочитайте перед воротами"
     e "Три цифры скрыты внутри этих строк"
-    $ ans = renpy.input("Введите цифры из строк заклинания\n请输入咒语行中的数字")
+    $ ans = renpy.input("请输入咒语行中的数字")
     $ ans = ans.strip()
     if ans == "412":
         jump choice_412
