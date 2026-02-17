@@ -819,6 +819,7 @@ style about_label_text:
 style about_text:
     size 26
     line_spacing 2
+    xsize 1000
 
 
 ## Экраны загрузки и сохранения ################################################
