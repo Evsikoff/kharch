@@ -222,10 +222,10 @@ screen eula_screen():
 
 label splashscreen:
     # ----------------------------------------------------
-    # 1. ВЫБОР ЯЗЫКА (Каждый раз в developer mode или если не выбран)
+    # 1. УСТАНОВКА ЯЗЫКА (всегда китайский)
     # ----------------------------------------------------
-    if not persistent.lang_chosen or config.developer:
-        call screen language_selection
+    $ renpy.change_language("chinese")
+    $ persistent.lang_chosen = True
 
     # ----------------------------------------------------
     # 2. ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ (Каждый раз в developer mode или если не принята)

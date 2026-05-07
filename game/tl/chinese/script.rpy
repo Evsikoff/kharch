@@ -12340,7 +12340,7 @@ translate chinese strings:
     new "玩家"
 
     old "Система"
-    new "系统"
+    new "系统提示"
 
     old "Старец"
     new "老者"
@@ -12424,7 +12424,7 @@ translate chinese strings:
     new "棺材里的老人"
 
     old "Маленький бородатый гном"
-    new "小个子留胡子的矮人"
+    new "留胡子的小矮人"
 
     old "Нищий"
     new "乞丐"

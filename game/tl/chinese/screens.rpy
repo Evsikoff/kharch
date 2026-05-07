@@ -40,7 +40,7 @@ translate chinese strings:
 
     # game/screens.rpy:311
     old "Загрузить"
-    new "读取游戏"
+    new "载入游戏"
 
     # game/screens.rpy:313
     old "Настройки"
@@ -348,4 +348,3 @@ translate chinese strings:
     # game/screens.rpy:23
     old "中文"
     new ""
-

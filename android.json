@@ -3,14 +3,14 @@
     "google_play_key": null,
     "google_play_salt": null,
     "heap_size": "3",
-    "icon_name": "\u041a\u0445\u0430\u0440. \u0413\u043e\u0440\u043e\u0434 \u043b\u043e\u0432\u0443\u0448\u0435\u043a.",
+    "icon_name": "\u9b45\u5f71\u90fd\u57ce\uff1a\u53ef\u54c8\u5c14\u4f20\u8bf4",
     "include_pil": false,
     "include_sqlite": false,
     "layout": null,
-    "name": "\u041a\u0445\u0430\u0440. \u0413\u043e\u0440\u043e\u0434 \u043b\u043e\u0432\u0443\u0448\u0435\u043a.",
+    "name": "\u9b45\u5f71\u90fd\u57ce\uff1a\u53ef\u54c8\u5c14\u4f20\u8bf4",
     "numeric_version": 1,
     "orientation": "sensorLandscape",
-    "package": "com.khar.game.zh",
+    "package": "com.meiyingducheng.khar",
     "permissions": [
         "VIBRATE",
         "INTERNET"
