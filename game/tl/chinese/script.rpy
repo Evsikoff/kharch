@@ -3,14 +3,14 @@
 # game/script.rpy:234
 translate chinese start_de1ffaee:
 
-    # narrator "卡尔是一个混乱统治的地方。这座城市是通往巴克兰的门户。"
-    narrator "卡尔是一个混乱统治的地方。这座城市是通往巴克兰的门户。"
+    # narrator "可哈尔是一个混乱统治的地方。这座城市是通往巴克兰的门户。"
+    narrator "可哈尔是一个混乱统治的地方。这座城市是通往巴克兰的门户。"
 
 # game/script.rpy:238
 translate chinese start_fe26d71e:
 
-    # narrator "卡尔位于沙穆坦蒂山脚下，在湍急流淌的贾巴吉大河岸边。"
-    narrator "卡尔位于沙穆坦蒂山脚下，在湍急流淌的贾巴吉大河岸边。"
+    # narrator "可哈尔位于沙穆坦蒂山脚下，在湍急流淌的贾巴吉大河岸边。"
+    narrator "可哈尔位于沙穆坦蒂山脚下，在湍急流淌的贾巴吉大河岸边。"
 
 # game/script.rpy:240
 translate chinese start_e0398acc:
@@ -21,8 +21,8 @@ translate chinese start_e0398acc:
 # game/script.rpy:245
 translate chinese start_750e8f5e:
 
-    # e "传说卡尔在许多年前，作为朝圣者的避难所，出现在河流唯一便利的渡口附近。但这个故事不太可信。"
-    e "传说卡尔在许多年前，作为朝圣者的避难所，出现在河流唯一便利的渡口附近。但这个故事不太可信。"
+    # e "传说可哈尔在许多年前，作为朝圣者的避难所，出现在河流唯一便利的渡口附近。但这个故事不太可信。"
+    e "传说可哈尔在许多年前，作为朝圣者的避难所，出现在河流唯一便利的渡口附近。但这个故事不太可信。"
 
 # game/script.rpy:250
 translate chinese start_950b8dbb:
@@ -45,20 +45,20 @@ translate chinese start_340006cb:
 # game/script.rpy:275
 translate chinese start_4f3fd2c1:
 
-    # e "正因如此，卡尔被称为“陷阱之城”。"
-    e "正因如此，卡尔被称为“陷阱之城”。"
+    # e "正因如此，可哈尔被称为“陷阱之城”。"
+    e "正因如此，可哈尔被称为“陷阱之城”。"
 
 # game/script.rpy:277
 translate chinese start_a74c5fe9:
 
-    # e "您任务的目标远在卡尔之外，而且知道它的名声，您宁愿不经过这个地方。但别无他路！"
-    e "您任务的目标远在卡尔之外，而且知道它的名声，您宁愿不经过这个地方。但别无他路！"
+    # e "您任务的目标远在可哈尔之外，而且知道它的名声，您宁愿不经过这个地方。但别无他路！"
+    e "您任务的目标远在可哈尔之外，而且知道它的名声，您宁愿不经过这个地方。但别无他路！"
 
 # game/script.rpy:283
 translate chinese start_40630bfd:
 
-    # e "只有两扇城门将卡尔与外界连接。您面前的是南门——从河这边来的唯一入口。在城市另一侧是北门——通往巴克兰的道路。"
-    e "只有两扇城门将卡尔与外界连接。您面前的是南门——从河这边来的唯一入口。在城市另一侧是北门——通往巴克兰的道路。"
+    # e "只有两扇城门将可哈尔与外界连接。您面前的是南门——从河这边来的唯一入口。在城市另一侧是北门——通往巴克兰的道路。"
+    e "只有两扇城门将可哈尔与外界连接。您面前的是南门——从河这边来的唯一入口。在城市另一侧是北门——通往巴克兰的道路。"
 
 # game/script.rpy:288
 translate chinese start_912670f4:
@@ -1869,8 +1869,8 @@ translate chinese choice_33_e4911b2b:
 # game/script.rpy:1402
 translate chinese choice_33_d252b8b3:
 
-    # pr "而在拳击台的黑色角落，是卡拉城的拳击冠军"
-    pr "而在拳击台的黑色角落，是卡拉城的拳击冠军"
+    # pr "而在拳击台的黑色角落，是可哈尔城的拳击冠军"
+    pr "而在拳击台的黑色角落，是可哈尔城的拳击冠军"
 
 # game/script.rpy:1403
 translate chinese choice_33_bde4c6f2:
@@ -2121,8 +2121,8 @@ translate chinese choice_297_57158bdf:
 # game/script.rpy:1560
 translate chinese choice_297_9e177bb6:
 
-    # ym "我住在卡拉城北门之外"
-    ym "我住在卡拉城北门之外"
+    # ym "我住在可哈尔城北门之外"
+    ym "我住在可哈尔城北门之外"
 
 # game/script.rpy:1561
 translate chinese choice_297_07bb8d92:
@@ -2139,8 +2139,8 @@ translate chinese choice_297_6a2c1b22:
 # game/script.rpy:1563
 translate chinese choice_297_957c41f2:
 
-    # ym "我是卡拉城首席执政官的私人仆人"
-    ym "我是卡拉城首席执政官的私人仆人"
+    # ym "我是可哈尔城首席执政官的私人仆人"
+    ym "我是可哈尔城首席执政官的私人仆人"
 
 # game/script.rpy:1564
 translate chinese choice_297_43b5a4ff:
@@ -2163,8 +2163,8 @@ translate chinese choice_297_e8b520ac:
 # game/script.rpy:1579
 translate chinese choice_186_c9549161:
 
-    # bm "卡拉城之外的世界是怎样的？"
-    bm "卡拉城之外的世界是怎样的？"
+    # bm "可哈尔城之外的世界是怎样的？"
+    bm "可哈尔城之外的世界是怎样的？"
 
 # game/script.rpy:1580
 translate chinese choice_186_e72a84ea:
@@ -2181,8 +2181,8 @@ translate chinese choice_186_93bd9450:
 # game/script.rpy:1582
 translate chinese choice_186_58b25f5e:
 
-    # i "你觉得卡拉城怎么样？"
-    i "你觉得卡拉城怎么样？"
+    # i "你觉得可哈尔城怎么样？"
+    i "你觉得可哈尔城怎么样？"
 
 # game/script.rpy:1583
 translate chinese choice_186_af71c543:
@@ -2565,8 +2565,8 @@ translate chinese choice_240_8a46c49b:
 # game/script.rpy:1876
 translate chinese choice_160_54d211a0:
 
-    # e "你接近卡哈中心。建筑变得更密集，道路也更脏乱。"
-    e "你接近卡哈中心。建筑变得更密集，道路也更脏乱。"
+    # e "你接近可哈尔中心。建筑变得更密集，道路也更脏乱。"
+    e "你接近可哈尔中心。建筑变得更密集，道路也更脏乱。"
 
 # game/script.rpy:1877
 translate chinese choice_160_4d564deb:
@@ -2907,8 +2907,8 @@ translate chinese choice_8_f36e7b99:
 # game/script.rpy:2084
 translate chinese choice_8_86e9b1aa:
 
-    # e "你遇到了卡哈最致命的居民之一——螳螂人。"
-    e "你遇到了卡哈最致命的居民之一——螳螂人。"
+    # e "你遇到了可哈尔最致命的居民之一——螳螂人。"
+    e "你遇到了可哈尔最致命的居民之一——螳螂人。"
 
 # game/script.rpy:2090
 translate chinese choice_27_9acc9190:
@@ -3309,8 +3309,8 @@ translate chinese choice_34_d53d7a9d:
 # game/script.rpy:2339
 translate chinese choice_34_664f385d:
 
-    # bm "卡哈的中心在港口周围"
-    bm "卡哈的中心在港口周围"
+    # bm "可哈尔的中心在港口周围"
+    bm "可哈尔的中心在港口周围"
 
 # game/script.rpy:2340
 translate chinese choice_34_66d5a8bb:
@@ -3357,8 +3357,8 @@ translate chinese choice_223_14fdf5eb:
 # game/script.rpy:2359
 translate chinese choice_195_bbd5a7f0:
 
-    # e "搜了链魔的口袋后，你找到了10枚金币——看来在卡哈制造锁链是个有利可图的营生。"
-    e "搜了链魔的口袋后，你找到了10枚金币——看来在卡哈制造锁链是个有利可图的营生。"
+    # e "搜了链魔的口袋后，你找到了10枚金币——看来在可哈尔制造锁链是个有利可图的营生。"
+    e "搜了链魔的口袋后，你找到了10枚金币——看来在可哈尔制造锁链是个有利可图的营生。"
 
 # game/script.rpy:2361
 translate chinese choice_195_43de95d5:
@@ -3495,8 +3495,8 @@ translate chinese choice_202_05dc1c09:
 # game/script.rpy:2447
 translate chinese choice_165_b6aade36:
 
-    # e "夜晚临近，你一点也不想在卡哈的街道上过夜。"
-    e "夜晚临近，你一点也不想在卡哈的街道上过夜。"
+    # e "夜晚临近，你一点也不想在可哈尔的街道上过夜。"
+    e "夜晚临近，你一点也不想在可哈尔的街道上过夜。"
 
 # game/script.rpy:2449
 translate chinese choice_165_a8ebe5aa:
@@ -3777,8 +3777,8 @@ translate chinese choice_335_2a935cb7:
 # game/script.rpy:2667
 translate chinese choice_335_f64eb685:
 
-    # pi "您可以从一位祭司那里了解到咒语，他对卡勒的所有事务和事件都非常了解。"
-    pi "您可以从一位祭司那里了解到咒语，他对卡勒的所有事务和事件都非常了解。"
+    # pi "您可以从一位祭司那里了解到咒语，他对可哈尔的所有事务和事件都非常了解。"
+    pi "您可以从一位祭司那里了解到咒语，他对可哈尔的所有事务和事件都非常了解。"
 
 # game/script.rpy:2668
 translate chinese choice_335_87015d94:
@@ -4449,8 +4449,8 @@ translate chinese choice_219_3937df05:
 # game/script.rpy:3021
 translate chinese choice_131_64b1d388:
 
-    # e "街道在另一条路的交叉口处终止。向右转，你朝着卡勒市中心走去。"
-    e "街道在另一条路的交叉口处终止。向右转，你朝着卡勒市中心走去。"
+    # e "街道在另一条路的交叉口处终止。向右转，你朝着可哈尔市中心走去。"
+    e "街道在另一条路的交叉口处终止。向右转，你朝着可哈尔市中心走去。"
 
 # game/script.rpy:3027
 translate chinese choice_139_e4c67916:
@@ -5384,8 +5384,8 @@ translate chinese choice_53_3c2fa7b8:
 # game/script.rpy:3536
 translate chinese choice_53_fff83dea:
 
-    # m "你应该原谅我，在卡尔这样的地方，对陌生人抱持戒心是很自然的。"
-    m "你应该原谅我，在卡尔这样的地方，对陌生人抱持戒心是很自然的。"
+    # m "你应该原谅我，在可哈尔这样的地方，对陌生人抱持戒心是很自然的。"
+    m "你应该原谅我，在可哈尔这样的地方，对陌生人抱持戒心是很自然的。"
 
 # game/script.rpy:3537
 translate chinese choice_53_31475d13:
@@ -5420,8 +5420,8 @@ translate chinese choice_194_929e9943:
 # game/script.rpy:3558
 translate chinese choice_18_5feb8aed:
 
-    # e "这位艺术家的肖像画描绘了卡尔的各种贵族和显要人物。"
-    e "这位艺术家的肖像画描绘了卡尔的各种贵族和显要人物。"
+    # e "这位艺术家的肖像画描绘了可哈尔的各种贵族和显要人物。"
+    e "这位艺术家的肖像画描绘了可哈尔的各种贵族和显要人物。"
 
 # game/script.rpy:3559
 translate chinese choice_18_838b493e:
@@ -5510,8 +5510,8 @@ translate chinese choice_70_1f8a86e8:
 # game/script.rpy:3605
 translate chinese choice_70_92ff68fa:
 
-    # e "但记住，在离开卡尔之前，你将无法再向莉布拉祈求。"
-    e "但记住，在离开卡尔之前，你将无法再向莉布拉祈求。"
+    # e "但记住，在离开可哈尔之前，你将无法再向莉布拉祈求。"
+    e "但记住，在离开可哈尔之前，你将无法再向莉布拉祈求。"
 
 # game/script.rpy:3606
 translate chinese choice_70_038068d8:
@@ -6643,8 +6643,8 @@ translate chinese choice_179_4ba5efea:
 # game/script.rpy:4168
 translate chinese choice_179_bde0196e:
 
-    # e "船起航了，你随它离开了卡尔，但方向完全不是你需要的。"
-    e "船起航了，你随它离开了卡尔，但方向完全不是你需要的。"
+    # e "船起航了，你随它离开了可哈尔，但方向完全不是你需要的。"
+    e "船起航了，你随它离开了可哈尔，但方向完全不是你需要的。"
 
 # game/script.rpy:4169
 translate chinese choice_179_449c0168:
@@ -6685,8 +6685,8 @@ translate chinese choice_48_d5efe693:
 # game/script.rpy:4191
 translate chinese choice_48_b46b9d88:
 
-    # e "看来卡尔的人民数学不太行，不像阿纳兰达的居民。"
-    e "看来卡尔的人民数学不太行，不像阿纳兰达的居民。"
+    # e "看来可哈尔的人民数学不太行，不像阿纳兰达的居民。"
+    e "看来可哈尔的人民数学不太行，不像阿纳兰达的居民。"
 
 # game/script.rpy:4192
 translate chinese choice_48_43103f88:
@@ -6697,8 +6697,8 @@ translate chinese choice_48_43103f88:
 # game/script.rpy:4193
 translate chinese choice_48_0f19a5bd:
 
-    # i "你知道打开卡尔北面大门的咒语吗？"
-    i "你知道打开卡尔北面大门的咒语吗？"
+    # i "你知道打开可哈尔北面大门的咒语吗？"
+    i "你知道打开可哈尔北面大门的咒语吗？"
 
 # game/script.rpy:4194
 translate chinese choice_48_5eca712f:
@@ -7039,8 +7039,8 @@ translate chinese choice_143_eb3891b6:
 # game/script.rpy:4340
 translate chinese choice_143_20bb4dbf:
 
-    # el "他们被迫过着游牧生活，只有在卡尔这里他们有一个永久的聚居地。"
-    el "他们被迫过着游牧生活，只有在卡尔这里他们有一个永久的聚居地。"
+    # el "他们被迫过着游牧生活，只有在可哈尔这里他们有一个永久的聚居地。"
+    el "他们被迫过着游牧生活，只有在可哈尔这里他们有一个永久的聚居地。"
 
 # game/script.rpy:4341
 translate chinese choice_143_ba3214e7:
@@ -7147,8 +7147,8 @@ translate chinese choice_121_48a2aef7:
 # game/script.rpy:4379
 translate chinese choice_198_e2b687fc:
 
-    # e "晨光照亮了卡尔苏醒的街道。"
-    e "晨光照亮了卡尔苏醒的街道。"
+    # e "晨光照亮了可哈尔苏醒的街道。"
+    e "晨光照亮了可哈尔苏醒的街道。"
 
 # game/script.rpy:4380
 translate chinese choice_198_0397c4b9:
@@ -7255,8 +7255,8 @@ translate chinese choice_270_ac494092:
 # game/script.rpy:4426
 translate chinese choice_270_e7796ca9:
 
-    # e "你在卡尔地下深处的下水道里。"
-    e "你在卡尔地下深处的下水道里。"
+    # e "你在可哈尔地下深处的下水道里。"
+    e "你在可哈尔地下深处的下水道里。"
 
 # game/script.rpy:4427
 translate chinese choice_270_3d8172c0:
@@ -7620,8 +7620,8 @@ translate chinese choice_83_d20d4444:
 # game/script.rpy:4668
 translate chinese choice_83_5ae71c1b:
 
-    # e "墓穴入口上方的铭文写道：「长眠于此的是辛瓦领主——卡拉的第五位执政官」。"
-    e "墓穴入口上方的铭文写道：「长眠于此的是辛瓦领主——卡拉的第五位执政官」。"
+    # e "墓穴入口上方的铭文写道：「长眠于此的是辛瓦领主——可哈尔的第五位执政官」。"
+    e "墓穴入口上方的铭文写道：「长眠于此的是辛瓦领主——可哈尔的第五位执政官」。"
 
 # game/script.rpy:4678
 translate chinese choice_47_d6d14042:
@@ -7968,8 +7968,8 @@ translate chinese choice_209_44743ec4:
 # game/script.rpy:4835
 translate chinese choice_209_bb554c85:
 
-    # i "我需要穿过卡拉才能到达巴克兰"
-    i "我需要穿过卡拉才能到达巴克兰"
+    # i "我需要穿过可哈尔才能到达巴克兰"
+    i "我需要穿过可哈尔才能到达巴克兰"
 
 # game/script.rpy:4836
 translate chinese choice_209_7ecafbda:
@@ -8418,8 +8418,8 @@ translate chinese choice_89_b6638a88:
 # game/script.rpy:5069
 translate chinese choice_89_0f563f08:
 
-    # e "你认为这一定是卡拉的保护神之一，罐子里的钱是献给神的祭品。"
-    e "你认为这一定是卡拉的保护神之一，罐子里的钱是献给神的祭品。"
+    # e "你认为这一定是可哈尔的保护神之一，罐子里的钱是献给神的祭品。"
+    e "你认为这一定是可哈尔的保护神之一，罐子里的钱是献给神的祭品。"
 
 # game/script.rpy:5081
 translate chinese choice_324_6c018792:
@@ -9479,8 +9479,8 @@ translate chinese choice_207_b63a8e98:
 # game/script.rpy:5874
 translate chinese choice_207_63ef2370:
 
-    # pm "三年前，我是卡拉的第七执政官。"
-    pm "三年前，我是卡拉的第七执政官。"
+    # pm "三年前，我是可哈尔的第七执政官。"
+    pm "三年前，我是可哈尔的第七执政官。"
 
 # game/script.rpy:5875
 translate chinese choice_207_90b4ca25:
@@ -9623,8 +9623,8 @@ translate chinese choice_207_be2d0926:
 # game/script.rpy:5898
 translate chinese choice_207_6679556e:
 
-    # pm "但我感觉我永远也离不开卡拉了——而它在你的旅途中一定会派上用场。"
-    pm "但我感觉我永远也离不开卡拉了——而它在你的旅途中一定会派上用场。"
+    # pm "但我感觉我永远也离不开可哈尔了——而它在你的旅途中一定会派上用场。"
+    pm "但我感觉我永远也离不开可哈尔了——而它在你的旅途中一定会派上用场。"
 
 # game/script.rpy:5900
 translate chinese choice_207_735c302b:
@@ -9647,8 +9647,8 @@ translate chinese choice_148_8530b060:
 # game/script.rpy:5909
 translate chinese choice_148_a38149b3:
 
-    # e "此刻，你已到达卡拉的最外围，可以看到前方横亘在路上的城市巨墙。"
-    e "此刻，你已到达卡拉的最外围，可以看到前方横亘在路上的城市巨墙。"
+    # e "此刻，你已到达可哈尔的最外围，可以看到前方横亘在路上的城市巨墙。"
+    e "此刻，你已到达可哈尔的最外围，可以看到前方横亘在路上的城市巨墙。"
 
 # game/script.rpy:5910
 translate chinese choice_148_c00e5502:
@@ -9725,8 +9725,8 @@ translate chinese choice_73_b7040cc3:
 # game/script.rpy:5933
 translate chinese choice_73_d26f8ab6:
 
-    # e "墙壁装饰着描绘卡拉神话场景的鲜艳壁画。"
-    e "墙壁装饰着描绘卡拉神话场景的鲜艳壁画。"
+    # e "墙壁装饰着描绘可哈尔神话场景的鲜艳壁画。"
+    e "墙壁装饰着描绘可哈尔神话场景的鲜艳壁画。"
 
 # game/script.rpy:5934
 translate chinese choice_73_e166e115:
@@ -10208,7 +10208,7 @@ translate chinese choice_31_0183b54e:
 translate chinese choice_31_bc713470:
 
     # idd "Заклинание знает только Сансас, Первый Архонт Кхара"
-    idd "只有桑萨斯，卡拉第一执政官，知晓咒语"
+    idd "只有桑萨斯，可哈尔第一执政官，知晓咒语"
 
 # game/script.rpy:6257
 translate chinese choice_31_3b505f68:
@@ -10304,7 +10304,7 @@ translate chinese choice_101_74da0640:
 translate chinese choice_101_fb58819e:
 
     # idd "И народ Кхара почти целое столетие не поклоняется ему"
-    idd "卡拉人已近百年未供奉他"
+    idd "可哈尔人已近百年未供奉他"
 
 # game/script.rpy:6281
 translate chinese choice_101_c91efec8:
@@ -10490,7 +10490,7 @@ translate chinese choice_113_443fa8fa:
 translate chinese choice_271_179572f8:
 
     # e "Вы подходите к темным Северным Вратам Кхара"
-    e "你走近卡拉幽暗的北门"
+    e "你走近可哈尔幽暗的北门"
 
 # game/script.rpy:6351
 translate chinese choice_271_a60c8f92:
@@ -10550,7 +10550,7 @@ translate chinese choice_271_a6d9b095:
 translate chinese choice_271_d4c21c85:
 
     # e "Вы не сможете вовремя покинуть Кхар, ваша миссия провалена…"
-    e "你无法及时离开卡拉，任务失败…"
+    e "你无法及时离开可哈尔，任务失败…"
 
 # game/script.rpy:6370
 translate chinese choice_412_ee9aff47:
@@ -10622,7 +10622,7 @@ translate chinese choice_511_e137af96:
 translate chinese choice_511_9f9eb7cb:
 
     # spoot "Миновав Кхар, вы должны пересечь Бакланд"
-    spoot "过卡拉后，你须穿越巴克兰"
+    spoot "过可哈尔后，你须穿越巴克兰"
 
 # game/script.rpy:6391
 translate chinese choice_511_a1544dea:
@@ -10646,7 +10646,7 @@ translate chinese choice_511_01ddd4e2:
 translate chinese choice_511_1194f724:
 
     # spoot "После того как вы покинете Кхар, за вами наверняка будут следить"
-    spoot "你离卡拉后，必遭追踪"
+    spoot "你离可哈尔后，必遭追踪"
 
 # game/script.rpy:6395
 translate chinese choice_511_22ee334e:
@@ -11850,7 +11850,7 @@ translate chinese strings:
 
     # game/script.rpy:4507
     old "Продолжить путь к окраине Кхара"
-    new "继续前往卡拉城郊"
+    new "继续前往可哈尔城郊"
 
     # game/script.rpy:4509
     old "Назад в сторону порта, чтобы исследовать здание, стоящее рядом на кладбище"
@@ -12290,7 +12290,7 @@ translate chinese strings:
 
     # game/script.rpy:6528
     old "Последовать по дороге к окраинам Кхара"
-    new "沿着路前往卡拉城郊"
+    new "沿着路前往可哈尔城郊"
 
     # game/script.rpy:6535
     old "Купить еду (3 монеты за порцию)"
