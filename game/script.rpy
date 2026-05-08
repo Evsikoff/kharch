@@ -189,21 +189,28 @@ init python:
             _post_data = "clientId=" + str(_client_id) + "&group=khar"
             _post_bytes = String(_post_data).getBytes("UTF-8")
 
-            _url = URL("https://khar.ttp3d.cn/counter.php")
-            _conn = cast('java.net.HttpURLConnection', _url.openConnection())
-            _conn.setRequestMethod("POST")
-            _conn.setDoOutput(True)
-            _conn.setConnectTimeout(15000)
-            _conn.setReadTimeout(15000)
-            _conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
+            for _counter_url in (
+                "https://khar.ttp3d.cn/counter.php",
+                "https://zhihaowl.cn/counter.php",
+            ):
+                try:
+                    _url = URL(_counter_url)
+                    _conn = cast('java.net.HttpURLConnection', _url.openConnection())
+                    _conn.setRequestMethod("POST")
+                    _conn.setDoOutput(True)
+                    _conn.setConnectTimeout(15000)
+                    _conn.setReadTimeout(15000)
+                    _conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
 
-            _os = _conn.getOutputStream()
-            _os.write(_post_bytes)
-            _os.flush()
-            _os.close()
+                    _os = _conn.getOutputStream()
+                    _os.write(_post_bytes)
+                    _os.flush()
+                    _os.close()
 
-            _conn.getResponseCode()
-            _conn.disconnect()
+                    _conn.getResponseCode()
+                    _conn.disconnect()
+                except Exception:
+                    pass
         except Exception:
             pass
 

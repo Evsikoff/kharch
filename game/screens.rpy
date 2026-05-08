@@ -59,51 +59,26 @@ screen language_selection():
                     color "#ffffff"
                     font ch_font
 
-# Английский текст
-define eula_en = """{b}PRIVACY POLICY AND USER AGREEMENT{/b}
-
-1. INTRODUCTION
-Thank you for playing our game ("App"). By downloading, installing, or playing the App, you agree to the terms of this Privacy Policy and User Agreement. If you do not agree, please uninstall the App immediately.
-
-2. DATA COLLECTION
-We respect your privacy. We DO NOT collect, store, share, or sell any of your personal data, sensitive information, or unique device identifiers. The App operates completely offline regarding user data.
-
-3. ANDROID PERMISSIONS
-To function correctly, the App requires access to the following permissions on your device:
-
-- READ_EXTERNAL_STORAGE
-- WRITE_EXTERNAL_STORAGE
-
-Reason for usage: These permissions are strictly used to save and load your game progress (save files) and to read game assets required for the App to run. We do not access, read, or modify your personal photos, media, or other files unrelated to the game.
-
-4. THIRD-PARTY SERVICES
-Since we do not collect data, we do not share data with third parties. However, the App runs on the Ren'Py engine.
-
-5. CONTACT
-If you have any questions regarding this policy, please contact us at: gsmevsikov@gmail.com"""
-
-# Китайский текст
-define eula_zh = """{b}隐私政策与用户协议{/b}
-
-1. 引言
-感谢您游玩本游戏（以下简称“应用”）。下载、安装或使用本应用即表示您同意本《隐私政策》和《用户协议》。如果您不同意，请立即卸载本应用。
-
-2. 数据收集
-我们非常重视您的隐私。本应用不收集、不存储、不共享也不出售您的任何个人信息、敏感数据或唯一设备标识符。关于用户数据，本应用完全在本地运行。
-
-3. 系统权限
-为了保证游戏的正常运行，本应用需要请求以下设备权限：
-
-- 读取外部存储 (READ_EXTERNAL_STORAGE)
-- 写入外部存储 (WRITE_EXTERNAL_STORAGE)
-
-使用目的：这些权限仅用于保存和读取您的游戏进度（存档文件）以及加载游戏运行所需的资源文件。我们绝对不会访问、读取 or 修改您的个人照片、媒体文件或任何与游戏无关的文件。
-
-4. 第三方服务
-由于我们不收集数据，因此不会与第三方共享数据。本应用基于 Ren'Py 引擎开发。
-
-5. 联系方式
-如果您对本政策有任何疑问，请联系我们：gsmevsikov@gmail.com"""
+# Полный текст политики конфиденциальности и пользовательского соглашения
+# (загружается из game/privacy_policy_zh.txt в init phase)
+init python:
+    def _load_eula_zh():
+        try:
+            f = renpy.file("privacy_policy_zh.txt")
+            try:
+                data = f.read()
+            finally:
+                f.close()
+            if isinstance(data, bytes):
+                data = data.decode("utf-8-sig")
+            else:
+                data = data.lstrip(u"﻿")
+            # Нормализуем переводы строк: CRLF/CR → LF (иначе \r рендерится «тофу»)
+            data = data.replace(u"\r\n", u"\n").replace(u"\r", u"\n")
+            return data
+        except Exception as e:
+            return u"加载隐私政策文件失败: " + str(e)
+    eula_zh = _load_eula_zh()
 
 
 
@@ -137,84 +112,64 @@ screen health_warning_screen():
         align (0.5, 0.95) # По центру низа (0.95 - почти самый низ)
         size 20
         color "#aaaaaa" # Сделаем чуть сероватым, чтобы не отвлекал
-# Переменная текущего языка (по умолчанию английский)
-default current_eula_lang = "en"
-
-
 # ==================================================================================
-# ЭКРАН СОГЛАШЕНИЯ
+# ЭКРАН СОГЛАШЕНИЯ (только китайский)
 # ==================================================================================
 
 screen eula_screen():
     modal True
-    add "#000a" # Затемнение фона
+    add "#000" # Сплошной чёрный фон
 
     frame:
         xalign 0.5
         yalign 0.5
+        background "#1a1a1a"
 
-        # Размеры окна (подстроены под мобильные экраны)
-        xsize 900
-        ysize 1100
+        # Размеры окна (с запасом по краям относительно 1536x1024)
+        xsize 1400
+        ysize 950
 
-        # Внутренние отступы, чтобы текст не прилипал к краям
-        padding (40, 40)
+        padding (40, 30)
 
         vbox:
-            spacing 20 # Расстояние между элементами по вертикали
+            spacing 18
+            xfill True
 
-            # --- 1. ЗАГОЛОВОК ---
-            if current_eula_lang == "en":
-                text "{b}PRIVACY POLICY{/b}" xalign 0.5 size 30 color "#fff"
-            else:
-                # Используем тег font для китайского шрифта
-                text "{font=[ch_font]}{b}隐私政策{/b}{/font}" xalign 0.5 size 30 color "#fff"
+            # --- ЗАГОЛОВОК ---
+            text "{b}隐私政策与使用条款{/b}" xalign 0.5 size 36 color "#fff" font ch_font
 
-            # --- 2. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ---
-            hbox:
-                xalign 0.5
-                spacing 40
-
-                textbutton "English":
-                    action SetVariable("current_eula_lang", "en")
-                    text_color ("#ffffff" if current_eula_lang == "en" else "#888888")
-
-                textbutton "{font=[ch_font]}中文 (Chinese){/font}":
-                    action SetVariable("current_eula_lang", "zh")
-                    text_color ("#ffffff" if current_eula_lang == "zh" else "#888888")
-
-            # --- 3. ОБЛАСТЬ ТЕКСТА (С ПРОКРУТКОЙ) ---
+            # --- ОБЛАСТЬ ТЕКСТА (С ПРОКРУТКОЙ) ---
             viewport:
                 id "eula_vp"
                 scrollbars "vertical"
                 mousewheel True
                 draggable True
 
-                # Ограничиваем высоту текста, чтобы осталось место для кнопок внизу
-                ysize 650
+                xfill True
+                ysize 770
 
                 vbox:
-                    if current_eula_lang == "en":
-                        text eula_en size 22 color "#ffffff"
-                    else:
-                        # Применяем шрифт ко всему блоку китайского текста
-                        text eula_zh size 22 color "#ffffff" font ch_font
+                    xfill True
+                    text eula_zh size 22 color "#ffffff" font ch_font line_spacing 4
 
-            # --- 4. КНОПКИ ДЕЙСТВИЯ (НИЗ) ---
+            # --- КНОПКИ ДЕЙСТВИЯ ---
             hbox:
                 xalign 0.5
-                spacing 60
-                yalign 1.0 # Прижать к низу контейнера
+                spacing 80
 
-                # Кнопка ПРИНЯТЬ
-                textbutton ("Accept" if current_eula_lang == "en" else "{font=[ch_font]}接受{/font} (Accept)"):
-                    # Сохраняем согласие и закрываем экран
+                # Кнопка ПРИНЯТЬ — сохраняет согласие и закрывает экран
+                textbutton "{font=[ch_font]}同意{/font}":
                     action [SetField(persistent, "eula_accepted", True), Return()]
-                    style "button"
+                    text_size 32
+                    text_color "#ffffff"
+                    text_hover_color "#00c8ff"
 
-                # Кнопка ВЫЙТИ
-                textbutton ("Exit" if current_eula_lang == "en" else "{font=[ch_font]}退出{/font} (Exit)"):
+                # Кнопка ОТКАЗАТЬСЯ — закрывает игру (на следующем запуске экран покажется снова)
+                textbutton "{font=[ch_font]}拒绝{/font}":
                     action Quit(confirm=False)
+                    text_size 32
+                    text_color "#ffffff"
+                    text_hover_color "#ff6464"
 
 # ==================================================================================
 # ЛОГИКА ЗАПУСКА
@@ -228,9 +183,12 @@ label splashscreen:
     $ persistent.lang_chosen = True
 
     # ----------------------------------------------------
-    # 2. ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ (Каждый раз в developer mode или если не принята)
+    # 2. ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+    # Показываем только при первом запуске на устройстве.
+    # Если пользователь нажал "拒绝" (Quit), persistent.eula_accepted остаётся
+    # False, и экран снова появится при следующем запуске.
     # ----------------------------------------------------
-    if not persistent.eula_accepted or config.developer:
+    if not persistent.eula_accepted:
         call screen eula_screen
 
     # ----------------------------------------------------
