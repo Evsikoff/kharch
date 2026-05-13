@@ -59,29 +59,6 @@ screen language_selection():
                     color "#ffffff"
                     font ch_font
 
-# Полный текст политики конфиденциальности и пользовательского соглашения
-# (загружается из game/privacy_policy_zh.txt в init phase)
-init python:
-    def _load_eula_zh():
-        try:
-            f = renpy.file("privacy_policy_zh.txt")
-            try:
-                data = f.read()
-            finally:
-                f.close()
-            if isinstance(data, bytes):
-                data = data.decode("utf-8-sig")
-            else:
-                data = data.lstrip(u"﻿")
-            # Нормализуем переводы строк: CRLF/CR → LF (иначе \r рендерится «тофу»)
-            data = data.replace(u"\r\n", u"\n").replace(u"\r", u"\n")
-            return data
-        except Exception as e:
-            return u"加载隐私政策文件失败: " + str(e)
-    eula_zh = _load_eula_zh()
-
-
-
 screen health_warning_screen():
     # Черный фон
     add "#000"
@@ -113,65 +90,6 @@ screen health_warning_screen():
         size 20
         color "#aaaaaa" # Сделаем чуть сероватым, чтобы не отвлекал
 # ==================================================================================
-# ЭКРАН СОГЛАШЕНИЯ (только китайский)
-# ==================================================================================
-
-screen eula_screen():
-    modal True
-    add "#000" # Сплошной чёрный фон
-
-    frame:
-        xalign 0.5
-        yalign 0.5
-        background "#1a1a1a"
-
-        # Размеры окна (с запасом по краям относительно 1536x1024)
-        xsize 1400
-        ysize 950
-
-        padding (40, 30)
-
-        vbox:
-            spacing 18
-            xfill True
-
-            # --- ЗАГОЛОВОК ---
-            text "{b}隐私政策与使用条款{/b}" xalign 0.5 size 36 color "#fff" font ch_font
-
-            # --- ОБЛАСТЬ ТЕКСТА (С ПРОКРУТКОЙ) ---
-            viewport:
-                id "eula_vp"
-                scrollbars "vertical"
-                mousewheel True
-                draggable True
-
-                xfill True
-                ysize 770
-
-                vbox:
-                    xfill True
-                    text eula_zh size 22 color "#ffffff" font ch_font line_spacing 4
-
-            # --- КНОПКИ ДЕЙСТВИЯ ---
-            hbox:
-                xalign 0.5
-                spacing 80
-
-                # Кнопка ПРИНЯТЬ — сохраняет согласие и закрывает экран
-                textbutton "{font=[ch_font]}同意{/font}":
-                    action [SetField(persistent, "eula_accepted", True), Return()]
-                    text_size 32
-                    text_color "#ffffff"
-                    text_hover_color "#00c8ff"
-
-                # Кнопка ОТКАЗАТЬСЯ — закрывает игру (на следующем запуске экран покажется снова)
-                textbutton "{font=[ch_font]}拒绝{/font}":
-                    action Quit(confirm=False)
-                    text_size 32
-                    text_color "#ffffff"
-                    text_hover_color "#ff6464"
-
-# ==================================================================================
 # ЛОГИКА ЗАПУСКА
 # ==================================================================================
 
@@ -183,16 +101,7 @@ label splashscreen:
     $ persistent.lang_chosen = True
 
     # ----------------------------------------------------
-    # 2. ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
-    # Показываем только при первом запуске на устройстве.
-    # Если пользователь нажал "拒绝" (Quit), persistent.eula_accepted остаётся
-    # False, и экран снова появится при следующем запуске.
-    # ----------------------------------------------------
-    if not persistent.eula_accepted:
-        call screen eula_screen
-
-    # ----------------------------------------------------
-    # 3. ПРЕДУПРЕЖДЕНИЕ О ЗАВИСИМОСТИ (Каждый запуск)
+    # 2. ПРЕДУПРЕЖДЕНИЕ О ЗАВИСИМОСТИ (Каждый запуск)
     # ----------------------------------------------------
     # Показываем экран с растворением (dissolve)
     show screen health_warning_screen
@@ -576,6 +485,10 @@ screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
+    textbutton "隐私政策":
+        style "privacy_policy_button"
+        action OpenURL("https://zhihaowl.cn/khar_yszc.txt")
+
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -680,6 +593,10 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
         action Return()
 
+    textbutton "隐私政策":
+        style "privacy_policy_button"
+        action OpenURL("https://zhihaowl.cn/khar_yszc.txt")
+
     label title
 
     if main_menu:
@@ -736,6 +653,22 @@ style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -45
+
+style privacy_policy_button is gui_button
+style privacy_policy_button_text is gui_button_text
+
+style privacy_policy_button:
+    xalign 0.5
+    yalign 1.0
+    yoffset -15
+    background None
+
+style privacy_policy_button_text:
+    font "gui/font/myfont.ttf"
+    size 24
+    idle_color gui.idle_small_color
+    hover_color gui.hover_color
+    insensitive_color gui.insensitive_color
 
 
 ## Экран Об игре ###############################################################
