@@ -816,15 +816,17 @@ screen file_slots(title):
                     textbutton _(">") action FilePageNext()
                     key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Загрузить Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Скачать Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+                ## --- Sync (синхронизация сохранений через интернет) отключён ---
+                ## Чтобы вернуть функцию — раскомментируйте блок ниже.
+                # if config.has_sync:
+                #     if CurrentScreenName() == "save":
+                #         textbutton _("Загрузить Sync"):
+                #             action UploadSync()
+                #             xalign 0.5
+                #     else:
+                #         textbutton _("Скачать Sync"):
+                #             action DownloadSync()
+                #             xalign 0.5
 
 
 style page_label is gui_label
